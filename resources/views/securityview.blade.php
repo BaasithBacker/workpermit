@@ -268,11 +268,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control">
+          <form action="/rejectedreq" method="post" id="rejectform">
+            {{csrf_field()}}
+            <input type="hidden" class="form-control" name="pid" value={{$data->id}}>
+            <input type="text" class="form-control" name="rejReason">
+
+          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" value="reject" class="btn btn-danger" href="{{url('rejected',$data->id)}}">Reject</button>
+        <button type="submit" value="reject" class="btn btn-danger"form="rejectform" >Reject</button>
       </div>
     </div>
   </div>
@@ -282,7 +287,7 @@
                                             </tr>
                                         </tbody
                                     </table>
-                                </form>
+                                <!-- </form> -->
                             </div>
                         </div>
                     </div>

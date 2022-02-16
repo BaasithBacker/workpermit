@@ -29,11 +29,15 @@ class security extends Controller
     
     }
 
-    public function rejected($id)
+    public function rejected(Request $request)
     {
-        $data=form::find($id);
 
-        $data->securitystatus='rejected';
+        $pid = request('pid');
+        $reason=request('rejReason');
+
+        $data=form::find($pid);
+
+        $data->securitystatus='Rejected-'.$reason;
 
         $data->save();
 

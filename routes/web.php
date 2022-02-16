@@ -73,7 +73,7 @@ Route::get('/maintenance',[maintanencecontroller::class,'showreq']);
 Route::get('/Shome/{id}',[maintanencecontroller::class,'showreq1']);
 
 Route::get('/approved/{id}',[security::class,'approved']); 
-Route::get('/rejected/{id}',[security::class,'rejected']); 
+Route::post('/rejectedreq',[security::class,'rejected']); 
 
 Route::get('/sapproved/{id}',[safety::class,'sapproved']); 
 Route::get('/srejected/{id}',[safety::class,'srejected']); 

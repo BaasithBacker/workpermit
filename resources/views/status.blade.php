@@ -63,19 +63,6 @@
                                         <td ><b>Name Of Requestor</b></td>
                                         <td ><b>Department</b></td>
                                         <td ><b>Contact Number</b></td>
-                                        <!--10px"><b>From Date</b></td>
-                                        <td ><b>To Date</b></td>
-                                        <td ><b>From Time</b></td>
-                                        <td ><b>To Time</b></td>
-                                        <td ><b>Agency Name</b></td>
-                                        <td ><b>Supervisor Name</b></td>
-                                        <td ><b>Supervisor Contact</b></td>
-                                        <td ><b>No Of Persons</b></td>
-                                        <td ><b>Insurance</b></td>
-                                        <td ><b>Job Location</b></td>
-                                        <td ><b>Work Details</b></td>
-                                        <td ><b>Equipments Used</b></td>
-                                        <td ><b>Temprory Electric</b></td> -->
                                         <td ><b>Security Status</b></td>
                                         <td ><b>Safety Status</b></td>
                                         <td ><b>maintanance Status</b></td>
@@ -91,29 +78,10 @@
                                         <td>{{$l->name}}</td>
                                         <td>{{$l->dept}}</td>
                                         <td>{{$l->contactno}}</td>
-                                        <!-- <td>{{$l->fdate}}</td>
-                                        <td>{{$l->tdate}}</td>
-                                        <td>{{$l->ftime}}</td>
-                                        <td>{{$l->ttime}}</td>
-                                        <td>{{$l->agencyname}}</td>
-                                        <td>{{$l->supervisorname}}</td>
-                                        <td>{{$l->supervisorcontact}}</td>
-                                        <td>{{$l->noofpersons}}</td>
-                                        <td>{{$l->insurance}}</td>
-                                        <td>{{$l->joblocation}}</td>
-                                        <td>{{$l->workdetails}}</td>
-                                        <td>{{$l->equipmentsused}}</td>
-                                        <td>{{$l->tempelectric}}</td> -->
                                         <td>{{$l->securitystatus}}</td>
                                         <td>{{$l->safetystatus}}</td>
                                         <td>{{$l->maintanancestatus}}</td>
-                                        <!-- <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
-                                        </td> -->
-
-                                        <!-- <td>
-                                            <a id="brn" value="Rejected" class="btn btn-danger" href="">Rejected<a>
-                                        </td> -->
+                                  
                                        
                                     </tr>
                                

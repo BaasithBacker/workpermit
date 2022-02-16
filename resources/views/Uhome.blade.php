@@ -1,4 +1,4 @@
-@extends('theme3')
+@extends('theme')
 
 @section('content')
 <body>

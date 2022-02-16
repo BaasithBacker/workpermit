@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/nice-select.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
 
@@ -29,79 +29,105 @@
 
 <body>
 
-    <!-- <div class="header-area">
+    <div class="header-area" id="securitymenu" style="display: none;">
             <div class="main-header header-sticky">
                 <div class="container-fluid">
-                    <div class="menu-wrapper"> -->
+                    <div class="menu-wrapper" >
                         <!-- Logo -->
-                        <!-- <div class="logo">
-                            <a href="index"><img src="../assets/img/logo/logo.png" alt=""></a> -->
-                        <!-- </div> -->
+                        <div class="logo">
+                            <a href="/security"><img src="../assets/img/logo/logo.png" alt=""></a>
+                        </div>
                         <!-- Main-menu -->
-                        <!-- <div class="main-menu d-none d-lg-block">
+                        <div class="main-menu d-none d-lg-block ml-auto">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/shop">shop</a></li>
-                                    <li><a href="/about">about</a></li>
-                                    <li class="hot"><a href="#">Latest</a>
+                                    <li><a style="text-decoration:none;" href="/security">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="/Uhome">Submit Form</a></li>
+                                    <li><a style="text-decoration:none;" href="#">My Request</a>    
                                         <ul class="submenu">
-                                            <li><a href="/shop"> Product list</a></li>
-                                            {{-- <li><a href="/productdetails"> Product Details</a></li> --}}
+                                        <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
+                                            <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
+                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
-                             
-                                    <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            <li><a href="/Login">Login</a></li>
-                                            {{-- <li><a href="/cart">Cart</a></li> --}}
-                                           
-                                            {{-- <li><a href="/confirmation">Confirmation</a></li>
-                                            <li><a href="/checkout">Product Checkout</a></li> --}}
-                                        </ul>
-                                    </li>
-                                    <li><a href="/Contact">Contact</a></li>
+                                    <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
                                 </ul>
                             </nav>
-                        </div> -->
-                        <!-- Header Right -->
-                        <!-- <div class="header-right">
-                            <ul>
-                                <li>
-                                    <div class="nav-search search-switch">
-                                        <span class="flaticon-search"></span>
-                                    </div>
-                                </li>
-                                <li> <a href="/Login"><span class="flaticon-arrow"></span></a></li>
-                                {{-- <li><a href="/cart"><span class="flaticon-shopping-cart"></span></a> </li> --}}
-                            </ul>
                         </div>
-                    </div> -->
+                        <!-- Header Right -->
+                        <div class="header-right">
+                         
+                        </div>
+                    </div>
+</div></div></div>
+
+<div class="header-area" id="usermenu" style="display: none;">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper" >
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/Uhome"><img src="../assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block ml-auto">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a style="text-decoration:none;" href="/Uhome">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="#">My Request</a>    
+                                        <ul class="submenu">
+                                        <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
+                                            <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                         
+                        </div>
+                    </div>
+</div></div></div>
+
+<?php
+    $utype = session('utype');
+    // dd($utype->usertype);
+    if($utype->usertype == "security"){
+        echo "<script>document.getElementById('securitymenu').style.display='block';</script>";
+    }
+    else if($utype->usertype == "staff"){
+        echo "<script>document.getElementById('usermenu').style.display='block';</script>";
+    }
+?>
 
                     @yield('content')
 
 
-        <!-- <footer> -->
+        <footer>
         <!-- Footer Start-->
-        <!-- <div class="footer-area footer-padding">
+        <div class="footer-area footer-padding">
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
                         <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30"> -->
+                            <div class="single-footer-caption mb-30">
                                 <!-- logo -->
-                                <!-- <div class="footer-logo">
-                                    <a href="index.html"><img src="../assets/img/logo/logo2_footer.png" alt=""></a>
+                                <div class="footer-logo">
+                                    <!-- <a href="/Shome"><img src="../assets/img/logo/logo2_footer.png" alt=""></a> -->
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Choose Perfect Style, The perfect style exists in perfect websites, find your choice</p>
+                                        <!-- <p>Choose Perfect Style, The perfect style exists in perfect websites, find your choice</p> -->
                                 </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                    <!-- <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4>Quick Links</h4>
@@ -139,15 +165,15 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
                      <!-- Footer bottom -->
                 <!-- <div class="row align-items-center">
                     <div class="col-xl-7 col-lg-8 col-md-7">
                         <div class="footer-copy-right"> -->
-                           <!-- <p> Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> -->
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.</p>                -->
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>               
                         <!-- </div>
                     </div>
                     <div class="col-xl-5 col-lg-4 col-md-5">
@@ -165,25 +191,25 @@
             </div>
         </div> -->
         <!-- Footer End-->
-    <!-- </footer> -->
+    </footer>
     <!--? Search model Begin -->
     <!-- <section id="search">
-        <div class="search-model-box">
-            <div class="h-100 d-flex align-items-center justify-content-center">
-                <div class="search-close-btn">+</div>
-                <form class="search-model-form" method="POST" action="productsearch1">
-                    {{ csrf_field() }}
-                    <input name="item" type="text" id="search-input" placeholder="Enter Model Name">
-                    <button class="btn btn-primary">Search</button>
-                </form>
-            </div>
+    <div class="search-model-box">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-btn">+</div>
+            <form class="search-model-form" method="POST" action="productsearch">
+                {{ csrf_field() }}
+                <input name="item" type="text" id="search-input" placeholder="Enter Model Name">
+                <button class="btn btn-primary">Search</button>
+            </form>
         </div>
-    </section> -->
+    </div>
+</section> -->
     <!-- Search model end -->
 
     
 
-                        <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
@@ -215,7 +241,7 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
 </body>
 </html>
 

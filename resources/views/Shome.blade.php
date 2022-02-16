@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('theme3')
 
 
 @section('content')

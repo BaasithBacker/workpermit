@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('theme3')
 
 
 @section('content')
@@ -252,8 +252,31 @@
                                                 <div class="col-6 col-lg-6 form-group d-flex flex-row ">
                                                 <a style="width:100%;height:50px" id="btn" value="approve" class="btn btn-success" href="{{url('approved',$data->id)}}">Approve</a> </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                    <a style="width:100%;height:50px" id="btn" value="reject" class="btn btn-danger" href="{{url('rejected',$data->id)}}">Reject</a> </div>
-                                                </div>
+                                                    <a style="width:100%;height:50px; color:#fff;" id="btn" value="reject" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Reject</a>
+                                                 </div>
+                                                 <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" value="reject" class="btn btn-danger" href="{{url('rejected',$data->id)}}">Reject</button>
+      </div>
+    </div>
+  </div>
+</div>
                                                     
                                                 </td>
                                             </tr>

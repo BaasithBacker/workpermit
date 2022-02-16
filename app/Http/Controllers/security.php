@@ -12,7 +12,7 @@ class security extends Controller
  
     public function showreq()
     {
-        $data=form::where('securitystatus','=','waiting')->get();
+        $data=form::where('securitystatus','=','waiting')->Paginate(2);
 
         return view('security',compact('data'));
     }
@@ -149,20 +149,6 @@ class security extends Controller
        
     }
 
-    public function showreqqq()
-    {
-        
-        $data=form::where('empno','=',session('sid'))->get();
-        return view('securitystatus',compact('data'));
-    }
-
-    public function showreqq()
-    {
-        
-        $data=form::where('safetystatus','=','approved')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('empno','=',session('sid'))->get();
-
-        return view('securityapproved',compact('data'));
-    }
 
   
     

@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('theme3')
 
 
 @section('content')
@@ -124,6 +124,7 @@
                                     @endforeach
                               
                                 </table>
+                                {{$data->links()}}
                                 </div>
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>

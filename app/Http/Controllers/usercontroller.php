@@ -18,14 +18,14 @@ class usercontroller extends Controller
     public function showreqqq()
     {
         
-        $data=form::where('empno','=',session('sid'))->get();
+        $data=form::where('empno','=',session('sid'))->Paginate(10);
         return view('status',compact('data'));
     }
 
     public function showreqq()
     {
         
-        $data=form::where('safetystatus','=','approved')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('empno','=',session('sid'))->get();
+        $data=form::where('safetystatus','=','approved')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('empno','=',session('sid'))->Paginate(10);
 
         return view('approvedreq',compact('data'));
     }

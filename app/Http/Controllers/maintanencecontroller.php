@@ -32,7 +32,7 @@ class maintanencecontroller extends Controller
         
         $data=form::find($id);
 
-        $data->maintanancestatus='approved';
+        $data->maintanancestatus='Approved';
 
         $data->save();
 
@@ -44,7 +44,7 @@ class maintanencecontroller extends Controller
     {
         $data=form::find($id);
 
-        $data->maintanancestatus='rejected';
+        $data->maintanancestatus='Rejected';
 
         $data->save();
 

@@ -250,9 +250,9 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                <a style="width:100%;height:50px" id="btn" value="approve" class="btn btn-success" href="{{url('sapproved',$data->id)}}">Approve</a> </div>
+                                                <a style="width:100%;height:50px" id="btn" value="Approve" class="btn btn-success" href="{{url('sapproved',$data->id)}}">Approve</a> </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                    <a style="width:100%;height:50px" id="btn" value="reject" class="btn btn-danger" href="{{url('srejected',$data->id)}}">Reject</a> </div>
+                                                    <a style="width:100%;height:50px" id="btn" value="Reject" class="btn btn-danger" href="{{url('srejected',$data->id)}}">Reject</a> </div>
                                                 </div>
                                                     
                                                 </td>

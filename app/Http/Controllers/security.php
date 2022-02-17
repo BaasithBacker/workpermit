@@ -21,7 +21,7 @@ class security extends Controller
     {
         $data=form::find($id);
 
-        $data->securitystatus='approved';
+        $data->securitystatus='Approved';
 
         $data->save();
 

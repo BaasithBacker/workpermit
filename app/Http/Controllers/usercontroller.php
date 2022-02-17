@@ -5,14 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\form;
 use App\Models\register;
+use App\Models\maintenance;
 use Carbon\Carbon;
 
 
 class usercontroller extends Controller
 {
-    public function currentdate()
+    public function print($id)
     {
-     
+        $data=form::join('maintenances','forms.id','maintenances.pid')
+        ->select('forms.*','maintenances.*')->find($id);
+      
+
+        return view('print',compact('data'));
+    }
+
+    public function download($id)
+    {
+       
+        
+       
     }
 
     public function showreqqq()

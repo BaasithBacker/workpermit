@@ -55,11 +55,12 @@
                                         <tbody>
                                         <tr>
                                             <td>
-                                                <div class="row align-items-center">
+                                            <input type="text" name="pid" value="{{$data->id}}" hidden="true">
+                                                
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                <input type="text" name="pid" value="{{$data->id}}" hidden="true">
                                                 <label  for="Safety Precautions"><b>Safety Precautions</b></label>
                                                 </div>
+                                                <div class="row align-items-center">
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Fire Extinguisher:</b></label>
                                                           <div class="col-md-12 form-group">
@@ -81,8 +82,8 @@
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Signage:</b></label>
                                                           <div class="col-md-12 form-group">
-                                                              <label class="px-3"><input type="radio" name="safety1" value="yes"><b>Yes</b></label>
-                                                              <label class="pl-3"><input type="radio" name="safety1" value="N/A"><b>N/A</b></label>
+                                                              <label class="px-3"><input type="radio" name="safety3" value="yes"><b>Yes</b></label>
+                                                              <label class="pl-3"><input type="radio" name="safety3" value="N/A"><b>N/A</b></label>
                                                           </div>
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">

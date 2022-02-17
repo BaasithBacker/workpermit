@@ -19,7 +19,7 @@ class safety extends Controller
     {
         $data=form::find($id);
 
-        $data->safetystatus='approved';
+        $data->safetystatus='Approved';
 
         $data->save();
 
@@ -31,7 +31,7 @@ class safety extends Controller
     {
         $data=form::find($id);
 
-        $data->safetystatus='rejected';
+        $data->safetystatus='Rejected';
 
         $data->save();
 

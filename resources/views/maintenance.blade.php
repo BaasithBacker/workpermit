@@ -80,8 +80,8 @@
                                         <td style="padding:10px"><b>Equipments Used</b></td>
                                         <td style="padding:10px"><b>Temprory Electric</b></td> -->
                                         <td style="padding:10px"><b>SecurityStatus</b></td>
-                                        <td style="padding:10px"><b>SafetyStatus</b></td>
                                         <td style="padding:10px"><b>MaintenanceStatus</b></td>
+                                        <td style="padding:10px"><b>SafetyStatus</b></td>
                                         <td style="padding:10px"><b>View</b></td>
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
@@ -111,8 +111,9 @@
                                         <td>{{$l->equipmentsused}}</td>
                                         <td>{{$l->tempelectric}}</td> -->
                                         <td>{{$l->securitystatus}}</td>
-                                        <td>{{$l->safetystatus}}</td>
                                         <td>{{$l->maintanancestatus}}</td>
+                                        <td>{{$l->safetystatus}}</td>
+                                        
                                         <td>
                                             <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
                                         </td>

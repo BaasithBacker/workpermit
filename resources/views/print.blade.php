@@ -40,7 +40,7 @@
                                <center><h3>Permit To Work Request</h3></center>
                                 <!-- <form class="row contact_form" action="/Uhome1" method="post" novalidate="novalidate">
                                 {{csrf_field()}} -->
-                                    <table class="table table-bordered table-justify">
+                                    <table id="example" class="table table-bordered table-justify">
                                         <tbody>
                                         <tr>
                                             <td>
@@ -155,8 +155,8 @@
                                             <div class="row align-items-center">
                                             <label class="col-md-12 form-group row" for=""><b>Applicant Details</b></label>
                                                     <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:70%" class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"
+                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:80%" class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"
                                                               placeholder="">
                                                         <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                     </div>
@@ -205,12 +205,12 @@
                                                 <label class="col-md-12 form-group row" for=""><b>Job Description</b></label>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                              <label for="no"><b>Exact Location of the job:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                               <input readonly class="form-control" style="width:70%" id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea>
+                                                               <input readonly class="form-control" style="width:80%" id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea>
                                                                 <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                 </div>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                              <label for="no"><b>Work to be carried out in detail:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                             <input readonly class="form-control" style="width:70%" id="desc" name="desc" value="{{$data->workdetails}}"
+                                                             <input readonly class="form-control" style="width:80%" id="desc" name="desc" value="{{$data->workdetails}}"
                                                              placeholder=""></textarea>
                                                              <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                 </div>
@@ -246,77 +246,229 @@
 
                                                 </td>
                                             </tr>
+                                            
+
+                                             <tr>
+                                            <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <input type="text" name="pid" value="{{$data->id}}" hidden="true">
+                                                <label  for="Safety Precautions"><b>Safety Precautions</b></label>
+                                                </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Fire Extinguisher:</b></label>
+                                                          <div class="col-md-12 form-group">
+                                                              <label class="px-3"><b>{{$data->FireExtinguisher}}</b></label>
+                                                             
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Access to fire Hydrant:</b></label>
+                                                    <div class="col-md-12 form-group ">
+                                                     <label class="px-3" ><b>{{$data->AccesstofireHydrant}}</b></label>
+                                
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                                
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Signage:</b></label>
+                                                          <div class="col-md-12 form-group">
+                                                              <label class="px-3"><b>{{$data->Signage}}</b></label>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Appropriate PPE:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                         <label class="px-3"><b>{{$data->AppropriatePPE}}</b></label>
+
+                                                     </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="row align-items-center">
+                                                
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Guardrails/Barricades:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Guardrails}}</b></label>
+                                                      
+
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Machine Safety:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->MachineSafety}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                              
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Adequate ventilation:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Adequateventilation}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Adequate Lighting:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->AdequateLighting}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                               
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Electrical Safety:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->ElectricalSafety}}</b></label>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->FallProtection}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+
                                             <tr>
                                                 <td>
                                                 <div class="row align-items-center">
-                                                <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                <a style="width:100%;height:50px" id="btn" value="approve" class="btn btn-success" href="{{url('approved',$data->id)}}">Approve</a> </div>
-                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                    <a style="width:100%;height:50px; color:#fff;" id="btn" value="reject" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Reject</a>
-                                                 </div>
-                                                 <!-- Button trigger modal -->
+                                            
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Isolation:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Isolation}}</b></label>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                            
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                        <label for="isolation1"><b>Isolation done by:</b></label>&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:90%" class="form-control" id="isolation1" name="isolation1" value="{{$data->isolation1}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                    </div>
+                                        </div>
+                                                </td>
+                                           </tr>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Reject Reason</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form action="/rejectedreq" method="post" id="rejectform">
-            {{csrf_field()}}
-            <input type="hidden" class="form-control" name="pid" value={{$data->id}}>
-            <input type="text" class="form-control" name="rejReason">
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label><b>Training/Toolbox Talk Details</b></label>
+                                                
+                                                    <label class="px-4"><b>{{$data->trainingtalk}} </b></label>
+                                                   
+                                                    </div>
+                                                </div>
+                                            
+                                                </td>
+                                           </tr>
 
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" value="reject" class="btn btn-danger"form="rejectform" >Reject</button>
-      </div>
-    </div>
-  </div>
-</div>
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Precuations to be taken prior to commencement and during work:</b></label>&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:60%" class="form-control" id="prec" name="prec" value="{{$data->precuation}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr>
+                                           <tr>
+                                               <td>
+                                           <div class="row align-items-center">
+                                           <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">   
+                                                <label class="pl-6"><b>Remarks if any:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:90%" class="form-control " id="remarks" name="remarks" value="{{$data->remarks}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr>
+
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Performing authority acceptance(To be completed by contractor)</b></label>&nbsp&nbsp&nbsp
+                                                </div>
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+
+                                                <label class="pl-6"><b>I certify that I have read and understand this permit and the work will be carried out in accordance with requirements.</b></label>      
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                    <label for=""><b>Name</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label for=""><b>Signature</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label for=""><b>Date</b></label>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr>
+
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Security Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->securitystatus}}</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Maintenance Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->safetystatus}}</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Safety Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->maintanancestatus}}</b></label>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr>
+                                          
+                                           
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 ">
+                                                    <center>
+                                                <a style="text-align:center;" id="pdf" value="approve" class="btn btn-success" href="">DOWNLOAD</a> </div>
                                                     
+                                                </center>
                                                 </td>
                                             </tr>
+                                            
+
                                         </tbody
                                     </table>
-                                <!-- </form> -->
+                                    
+                                </form>
                             </div>
                         </div>
-                    </div>
-
-
-                                            
-                                 
-                                        
-                                   
-
-                                
-                                    
-
-                                   
-                                    
-                                   
-
-                                       
-
-                                
-
-
-                                       
-                                   
-
-
-                                   
-                                    
-                                       
+                    </div>             
                                     </div>
                                 
                             </div>
@@ -327,6 +479,16 @@
           
         </section>
         </table>
+       <script type="text/javascript" src="src/tableHTMLExport.js"></script>
+
+<script type="text/javascript">
+ $("#pdf").on("click",function(){
+    $("#example").tableHTMLExport({
+      type:'pdf',
+      filename:'sample.pdf'
+    });
+  });
+</script>
         <!--================login_part end =================-->
     </main>
 

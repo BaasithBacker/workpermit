@@ -64,8 +64,9 @@
                                         <td ><b>Department</b></td>
                                         <td ><b>Contact Number</b></td>
                                         <td ><b>Security Status</b></td>
-                                        <td ><b>Safety Status</b></td>
                                         <td ><b>maintanance Status</b></td>
+                                        <td ><b>Safety Status</b></td>
+                                        
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
 
@@ -79,8 +80,9 @@
                                         <td>{{$l->dept}}</td>
                                         <td>{{$l->contactno}}</td>
                                         <td>{{$l->securitystatus}}</td>
-                                        <td>{{$l->safetystatus}}</td>
                                         <td>{{$l->maintanancestatus}}</td>
+                                        <td>{{$l->safetystatus}}</td>
+                                        
                                   
                                        
                                     </tr>

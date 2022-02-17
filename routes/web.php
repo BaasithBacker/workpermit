@@ -7,6 +7,10 @@ use App\Http\Controllers\safety;
 use App\Http\Controllers\security;
 use App\Http\Controllers\usercontroller;
 use Carbon\Carbon;
+use Dompdf\Dompdf;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +42,7 @@ Route::get('/Uhome', function () {
 Route::get('/securityform', function () {
     return view('securityform');
 });
+
 
 // Route::get('/Shome', function () {
 //     return view('Shome');
@@ -85,6 +90,7 @@ Route::get('/mrejected/{id}',[maintanencecontroller::class,'mrejected']);
 Route::get('/view/{id}',[security::class,'view']); 
 
 Route::get('/sview/{id}',[safety::class,'view']); 
+Route::get('/printview/{id}',[usercontroller::class,'print']);
 
 Route::get('/mview/{id}',[maintanencecontroller::class,'view']); 
 

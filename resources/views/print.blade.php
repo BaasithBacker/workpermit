@@ -15,22 +15,7 @@
         <!-- Header End -->
     </header>
     <main>
-        <!-- Hero Area Start-->
-        <!-- <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Add Category</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Hero Area End-->
-        <!--================login_part Area =================-->
+      
         
         <section class="login_part">
            
@@ -38,8 +23,8 @@
                         <div class="row align-items-center">
                             <div class="col-12 col-lg-12">
                                <center><h3>Permit To Work Request</h3></center>
-                                <!-- <form class="row contact_form" action="/Uhome1" method="post" novalidate="novalidate">
-                                {{csrf_field()}} -->
+                                <form  class="row contact_form" action="" method="post" novalidate="novalidate">
+                              
                                     <table id="example" class="table table-bordered table-justify">
                                         <tbody>
                                         <tr>
@@ -450,7 +435,14 @@
                                            </tr>
                                           
                                            
-                                           <tr>
+                                           
+                                            
+
+                                        </tbody
+                                    </table>
+                                    
+                                </form>
+                                <tr>
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 ">
@@ -460,12 +452,6 @@
                                                 </center>
                                                 </td>
                                             </tr>
-                                            
-
-                                        </tbody
-                                    </table>
-                                    
-                                </form>
                             </div>
                         </div>
                     </div>             
@@ -478,18 +464,39 @@
             </div>
           
         </section>
-        </table>
-       <script type="text/javascript" src="src/tableHTMLExport.js"></script>
-
-<script type="text/javascript">
- $("#pdf").on("click",function(){
-    $("#example").tableHTMLExport({
-      type:'pdf',
-      filename:'sample.pdf'
-    });
-  });
-</script>
+        
+       
         <!--================login_part end =================-->
     </main>
+    <script type="text/javascript" src="src/jspdf.min.js"></script>
 
+<script type="text/javascript" src="src/jspdf.plugin.autotable.min.js"></script>
+
+<script type="text/javascript" src="src/tableHTMLExport.js"></script>
+
+<script type="text/javascript">
+  
+  $("#json").on("click",function(){
+    $("#example").tableHTMLExport({
+      type:'json',
+      filename:'permit.json'
+    });
+  });
+
+  $("#pdf").on("click",function(){
+    $("#example").tableHTMLExport({
+      type:'pdf',
+      filename:'permit.pdf',
+	  orientation:'landscape'
+    });
+  });
+
+  $("#csv").on("click",function(){
+    $("#example").tableHTMLExport({
+      type:'csv',
+      filename:'permit.csv'
+    });
+  });
+
+</script>
     @endsection

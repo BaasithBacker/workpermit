@@ -9,9 +9,7 @@
                     <div class="col-12">
                         <div class="mobile_menu d-block d-lg-none"></div>
                     </div>
-                </div>
-            </div>
-        </div>
+          
         <!-- Header End -->
     </header>
     <head>
@@ -26,30 +24,14 @@
 
     </head>
     <main>
-        <!-- Hero Area Start-->
-        <!-- <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Add Category</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Hero Area End-->
-        <!--================login_part Area =================-->
-        
+  
         <section class="login_part">
             
                     
         <div class="container mt-4 mb-4">
                         <div class="row align-items-center">
                             <div class="col-12 col-lg-12">
-                           <form class="row contact_form" action="/Shome1" method="post" novalidate="novalidate">
+                           <form style="width:auto;height:auto;" class="row contact_form" action="/Shome1" method="post" novalidate="novalidate">
                                 {{csrf_field()}}
                                 <table class="table table-bordered table-justify">
                                         <tbody>
@@ -108,7 +90,7 @@
                                                     </div>
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                    <label class="col-6 col-lg-6 pl-0"><b>Machine Safety::</b></label>
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Machine Safety:</b></label>
                                                     <div class="col-md-12 form-group">
                                                         <label class="px-3"><input type="radio" name="safety6" value="yes"><b>Yes</b></label>
                                                         <label class="pl-3"><input type="radio" name="safety6" value="N/A"><b>N/A</b></label>
@@ -224,46 +206,26 @@
                                             
                                                 </td>
                                            </tr>
+                                
                                            <tr>
                                                <td>
-                                         
-                                               
-                                           <Center><button type="submit" value="Submit" style="width: 500px; height:80px;" class="btn btn-success btn-lg" id="Submit">
+                                           <div class="row justify-content-center">
+                                          <button type="submit" style="width: 500px;" value="Submit" class="btn btn-success" id="Submit">
                                                     Submit
-                                                </button></Center>
-                                                
+                                                </button>
+                                                </div>
+                                            
                                                 </td>
-                                           </tr>
+                                           
 
                                         </tbody>
                                 </table>
-
-  
-                                  
-                                  
-
-                              
-
-                                    
-                                    
-
-                                    <div class="col-md-12 ">
-                                      
-                                       
-
-                                       
-                                    
-                                       
-                                    </div>
-                
-                                    
-                                    </form>
+                            </form>
                             
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+              
           
         </section>
         

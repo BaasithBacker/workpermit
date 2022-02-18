@@ -72,16 +72,19 @@ Route::get('/securityapproved',[security::class,'showreqq']);
 Route::get('/status',[usercontroller::class,'showreqqq']);
 Route::get('/securitystatus',[security::class,'showreqqq']);
 
-Route::get('/safety',[safety::class,'showreq']);
+//Route::get('/safety',[safety::class,'showreq']);
 
 Route::get('/maintenance',[maintanencecontroller::class,'showreq']);
+
+
+Route::get('/safety',[safety::class,'showreq']);
 Route::get('/Shome/{id}',[maintanencecontroller::class,'showreq1']);
 
 Route::get('/approved/{id}',[security::class,'approved']); 
 Route::post('/rejectedreq',[security::class,'rejected']); 
+Route::post('/rejectedreq',[safety::class,'rejected']); 
 
 Route::get('/sapproved/{id}',[safety::class,'sapproved']); 
-Route::get('/srejected/{id}',[safety::class,'srejected']); 
 
 // Route::get('/Shome/{id}',[maintanencecontroller::class,'store']); 
 

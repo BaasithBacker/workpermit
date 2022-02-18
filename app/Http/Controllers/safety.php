@@ -10,7 +10,7 @@ class safety extends Controller
     public function showreq()
     {
 
-        $data=form::where('safetystatus','=','waiting')->where('securitystatus','=','approved')->get();
+        $data=form::where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('safetystatus','=','waiting')->get();
 
         return view('safety',compact('data'));
     }
@@ -19,23 +19,26 @@ class safety extends Controller
     {
         $data=form::find($id);
 
-        $data->safetystatus='Approved';
+        $data->maintanancestatus='Approved';
 
         $data->save();
 
-       return redirect('/safety');
+       return redirect('/maintenance');
     
     }
 
-    public function srejected($id)
+    public function rejected(Request $request)
     {
-        $data=form::find($id);
+        $pid = request('pid');
+        $reason=request('rejReason');
 
-        $data->safetystatus='Rejected';
+        $data=form::find($pid);
+
+        $data->maintanancestatus='Rejected-'.$reason;
 
         $data->save();
 
-       return redirect('/safety');
+       return redirect('/maintenance');
     
     }
 

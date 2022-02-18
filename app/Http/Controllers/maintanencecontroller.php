@@ -10,14 +10,15 @@ use App\Models\form;
 class maintanencecontroller extends Controller
 {
 
+
+
     public function showreq()
     {
 
-        $data=form::where('safetystatus','=','approved')->where('securitystatus','=','approved')->where('maintanancestatus','=','waiting')->get();
+        $data=form::where('maintanancestatus','=','waiting')->where('securitystatus','=','approved')->get();
 
         return view('maintenance',compact('data'));
     }
-
     public function showreq1($id)
     {
 
@@ -36,7 +37,7 @@ class maintanencecontroller extends Controller
 
         $data->save();
 
-       return redirect('/maintenance');
+       return redirect('/safety');
     
     }
 
@@ -48,7 +49,7 @@ class maintanencecontroller extends Controller
 
         $data->save();
 
-       return redirect('/maintenance');
+       return redirect('/safety');
     
     }
 
@@ -144,11 +145,11 @@ class maintanencecontroller extends Controller
 
                 $data=form::find($req);
 
-                $data->maintanancestatus='approved';
+                $data->safetystatus='Approved';
         
                 $data->save();
 
-                echo "<script>alert('Submitted successfully');window.location='/maintenance';</script>"; 
+                echo "<script>alert('Submitted successfully');window.location='/safety';</script>"; 
 
     }
 }

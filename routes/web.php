@@ -82,6 +82,7 @@ Route::get('/Shome/{id}',[maintanencecontroller::class,'showreq1']);
 
 Route::get('/approved/{id}',[security::class,'approved']); 
 Route::post('/rejectedreq',[security::class,'rejected']); 
+Route::post('/rejectedreq',[maintanencecontroller::class,'rejected']); 
 Route::post('/rejectedreq',[safety::class,'rejected']); 
 
 Route::get('/sapproved/{id}',[safety::class,'sapproved']); 

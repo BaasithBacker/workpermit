@@ -27,6 +27,7 @@ class safety extends Controller
     
     }
 
+   
     public function rejected(Request $request)
     {
         $pid = request('pid');
@@ -34,11 +35,11 @@ class safety extends Controller
 
         $data=form::find($pid);
 
-        $data->maintanancestatus='Rejected-'.$reason;
+        $data->safetystatus='Rejected-'.$reason;
 
         $data->save();
 
-       return redirect('/maintenance');
+       return redirect('/safety');
     
     }
 

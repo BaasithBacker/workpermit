@@ -152,4 +152,18 @@ class maintanencecontroller extends Controller
                 echo "<script>alert('Submitted successfully');window.location='/safety';</script>"; 
 
     }
+    public function rejected(Request $request)
+    {
+        $pid = request('pid');
+        $reason=request('rejReason');
+
+        $data=form::find($pid);
+
+        $data->maintanancestatus='Rejected-'.$reason;
+
+        $data->save();
+
+       return redirect('/maintenance');
+    
+    }
 }

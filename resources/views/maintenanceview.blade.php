@@ -15,23 +15,7 @@
         <!-- Header End -->
     </header>
     <main>
-        <!-- Hero Area Start-->
-        <!-- <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Add Category</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Hero Area End-->
-        <!--================login_part Area =================-->
-        
+  
         <section class="login_part">
            
                     <div class="container mt-4 mb-4">
@@ -249,13 +233,12 @@
                                             <tr>
                                                 <td>
                                                 <div class="row align-items-center">
-                                            
-                                                <div class="col-6 col-lg-6">
-                                               <a id="btn" style="width:100%;height:50px;" value="" class="btn btn-danger" href="/Shome/{{$data->id}}">NEXT</a>                      
+                                                <div class="col-6 col-lg-6 form-group d-flex flex-row ">
+                                                <a style="width:100%;height:50px" id="btn" value="Approve" class="btn btn-success" href="{{url('sapproved',$data->id)}}">Approve</a> </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row ">
+                                                    <a style="width:100%;height:50px; color:#fff;" id="btn" value="reject" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Reject</a>
                                                 </div>
-                                                <div class="col-6 col-lg-6">
-                                                <a style="width:100%;height:50px; color:#fff;" id="btn" value="reject" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Reject</a>
-                                                </div>
+
                                                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -280,6 +263,7 @@
     </div>
   </div>
 </div>
+                                                    
                                                 </td>
                                             </tr>
                                         </tbody

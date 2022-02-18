@@ -93,6 +93,75 @@
                     </div>
 </div></div></div>
 
+<div class="header-area" id="maintenancemenu" style="display: none;">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper" >
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/maintenance"><img src="../assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block ml-auto">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a style="text-decoration:none;" href="/maintenance">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="/Uhome">Submit Form</a></li>
+                                    <li><a style="text-decoration:none;" href="#">My Request</a>    
+                                        <ul class="submenu">
+                                        <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
+                                            <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
+                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                         
+                        </div>
+                    </div>
+</div></div></div>
+
+
+<div class="header-area" id="safetymenu" style="display: none;">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper" >
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/maintenance"><img src="../assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block ml-auto">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a style="text-decoration:none;" href="/maintenance">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="/Uhome">Submit Form</a></li>
+                                    <li><a style="text-decoration:none;" href="#">My Request</a>    
+                                        <ul class="submenu">
+                                        <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
+                                            <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
+                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                         
+                        </div>
+                    </div>
+</div></div></div>
+
 <?php
     $utype = session('utype');
     // dd($utype->usertype);
@@ -101,6 +170,12 @@
     }
     else if($utype->usertype == "staff"){
         echo "<script>document.getElementById('usermenu').style.display='block';</script>";
+    }
+    else if($utype->usertype == "maintanance"){
+        echo "<script>document.getElementById('maintenancemenu').style.display='block';</script>";
+    }
+    else if($utype->usertype == "maintanance"){
+        echo "<script>document.getElementById('safetymenu').style.display='block';</script>";
     }
 ?>
 

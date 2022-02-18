@@ -93,10 +93,10 @@ Route::get('/mrejected/{id}',[maintanencecontroller::class,'mrejected']);
 
 Route::get('/view/{id}',[security::class,'view']); 
 
-Route::get('/sview/{id}',[safety::class,'view']); 
+Route::get('/sview/{id}',[maintanencecontroller::class,'view']); 
 Route::get('/printview/{id}',[usercontroller::class,'print']);
 
-Route::get('/mview/{id}',[maintanencecontroller::class,'view']); 
+Route::get('/mview/{id}',[safety::class,'view']); 
 
 Route::get('/sessiondelete',function(){
     if(session()->has('sid'))

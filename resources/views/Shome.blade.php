@@ -40,7 +40,7 @@
                                             <input type="text" name="pid" value="{{$data->id}}" hidden="true">
                                                 
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                <label  for="Safety Precautions"><b>Safety Precautions</b></label>
+                                                <label class="pr-6" for="Safety Precautions"><b>Safety Precautions</b></label>
                                                 </div>
                                                 <div class="row align-items-center">
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
@@ -190,7 +190,7 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <label class="pl-3"><b>Precuations to be taken prior to commencement and during work:</b></label>&nbsp&nbsp&nbsp
-                                                        <input type="text" style="width:49%" class="form-control" id="prec" name="prec" value="" placeholder="">
+                                                        <input type="text" style="width:90%" class="form-control" id="prec" name="prec" value="" placeholder="">
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                 </div>
                                             
@@ -200,7 +200,7 @@
                                                <td>
                                            <div class="row align-items-center">
                                                 <label class="pl-3"><b>Remarks if any:</b></label>&nbsp&nbsp&nbsp
-                                                        <input type="text" style="width:79.5%" class="form-control" id="remarks" name="remarks" value="" placeholder="">
+                                                        <input type="text" style="width:90%" class="form-control" id="remarks" name="remarks" value="" placeholder="">
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                 </div>
                                             

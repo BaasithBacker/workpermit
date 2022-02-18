@@ -43,6 +43,8 @@ class safety extends Controller
     
     }
 
+   
+
     public function view($id)
     {
         $data=form::find($id);

@@ -59,6 +59,7 @@ class maintanencecontroller extends Controller
         return view('maintenanceview',compact('data'));
     }
 
+
     public function store(Request $request)
     {
         $req = request('pid');

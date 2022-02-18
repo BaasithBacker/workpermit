@@ -58,12 +58,12 @@ class loginactivity extends Controller
                 //    echo session('sname')->id;
                    echo "<script>alert('Successfully Logined,Welcome');window.location='/Uhome';</script>"; 
                 }
-                else if($ut->usertype=='maintenance')
+                else if($ut->usertype=='maintanance')
                 {
                     $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
                     $i=register::where('empno','like',"$uempno")->first();
                     $request->session()->put('sid',$i->empno);
-                    echo "<script>alert('Successfully Logined,Welcome');window.location='/Shome';</script>"; 
+                    echo "<script>alert('Successfully Logined,Welcome');window.location='/maintenance';</script>"; 
 
                 
                 }

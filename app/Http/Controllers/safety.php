@@ -7,6 +7,26 @@ use App\Models\form;
 
 class safety extends Controller
 {
+
+    public function getreport()
+    {
+        $getdate1=request('date1');
+        $getdate2=request('date2');
+          
+        $data=form::select('*')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('safetystatus','=','approved')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        
+        return view('safetyreport',compact('data'));
+    }
+
+    public function rview($id)
+    {
+        $data=form::join('safeties','forms.id','safeties.pid')
+        ->select('forms.*','safeties.*')->find($id);
+      
+
+        return view('safetyreportview',compact('data'));
+    }
+
     public function showreq()
     {
 

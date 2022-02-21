@@ -36,7 +36,7 @@
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="date"><b>Date Issued:</b></label>&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:80%" class="form-control" id="date" name="date" value="{{Carbon\Carbon::parse($data->date)->format('d-m-y')}}" placeholder="">
+                                                        <input readonly type="text" style="width:80%" class="form-control" id="date" name="date" value="{{Carbon\Carbon::parse($data->date)->format('d-m-Y')}}" placeholder="">
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">

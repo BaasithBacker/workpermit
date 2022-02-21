@@ -49,13 +49,24 @@
                         <div class="login_part_form">
                             <div class="">
                            
-                                <form class="row contact_form" action="/security" method="get" novalidate="novalidate">
+                                <form class="row contact_form" action="/safetyreport" method="get" novalidate="novalidate">
                                 {{csrf_field()}}
-                                <center><h3>Pending Request's</h3></center>  
+                                <center><h3>Safety Report's</h3></center> 
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="date" name="date1" class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="date" name="date2" class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <button class="btn btn-danger">Search</button>
+                                </div>   
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-10">
-                                <table style="" class="table table-bordered table-primary table-responsive">
+                                <table class="table table-bordered table-primary table-responsive">
                                    
                                     <tr>
                                         <td style="padding:10px"><b>Permit Number</b></td>
@@ -84,7 +95,6 @@
                                         <td style="padding:10px"><b>MaintenanceStatus</b></td>
                                         <td style="padding:10px"><b>SafetyStatus</b></td>
                                         
-                                        <td style="padding:10px"><b>View</b></td>
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
 
@@ -119,7 +129,7 @@
                                        
                                         
                                         <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
+                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('rview',$l->id)}}">View</a>
                                         </td>
 
                                         <!-- <td>

@@ -249,42 +249,20 @@
                                             <tr>
                                                 <td>
                                                 <div class="row align-items-center">
-                                            
-                                                <div class="col-6 col-lg-6">
-                                               <a id="btn" style="width:100%;height:50px;" value="" class="btn btn-danger" href="/Shome/{{$data->id}}">NEXT</a>                      
+                                                <div class="col-12 col-lg-12">
+                                               <center><a style="width:50%;height:50px" id="btn" value="back" class="btn btn-success" href="/securityreport">Back</a></center>
                                                 </div>
-                                                <div class="col-6 col-lg-6">
-                                                <a style="width:100%;height:50px; color:#fff;" id="btn" value="reject" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">Reject</a>
-                                                </div>
-                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Reject Reason</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form action="/rejectedreq" method="post" id="rejectform">
-            {{csrf_field()}}
-            <input type="hidden" class="form-control" name="pid" value={{$data->id}}>
-            <input type="text" class="form-control" name="rejReason">
+                                                 </div>
+                                                 <!-- Button trigger modal -->
 
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" value="reject" class="btn btn-danger"form="rejectform" >Reject</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+<!-- Modal -->
+                                                    
                                                 </td>
                                             </tr>
                                         </tbody
                                     </table>
-                                </form>
+                                <!-- </form> -->
                             </div>
                         </div>
                     </div>

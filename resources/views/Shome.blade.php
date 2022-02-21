@@ -3,6 +3,15 @@
 
 @section('content')
 <body>
+    <head>
+        <script>
+             function text(x) {
+                          if (x == 0) document.getElementById("isolation").style.display="block";
+                          else document.getElementById("isolation").style.display="none";
+                          return;
+            }
+        </script>
+    </head>
     <header>
         
                     <!-- Mobile Menu -->
@@ -12,17 +21,6 @@
           
         <!-- Header End -->
     </header>
-    <head>
-        <script>
-            function text(x) {
-                if (x == 0) document.getElementById("isolation").style.display="block";
-                else document.getElementById("isolation").style.display="none";
-                return;
-            }
-        </script>
-
-
-    </head>
     <main>
   
         <section class="login_part">
@@ -149,17 +147,16 @@
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Isolation:</b></label>
                                                     <div class="col-md-12 form-group">
-                                                        <label class="px-3"><input type="radio" name="isolation" value="Required"><b>Required</b></label>
-                                                        <label class="pl-3"><input type="radio" name="isolation" value="NotRequired"><b>NotRequired</b></label>
+                                                        <label class="px-3"><input type="radio" name="isolation" value="Required" onclick="text(0)"><b>Required</b></label>
+                                                        <label class="pl-3"><input type="radio" name="isolation" value="NotRequired" onclick="text(1)" ><b>NotRequired</b></label>
                                                     </div>
                                                     </div>
                                                 </div>
-                                                <div class="row align-items-center">
+                                                <div class="row align-items-center" id="isolation" style="display:none;" >
                                             
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                        <label for="isolation1"><b>Isolation done by:</b></label>&nbsp&nbsp&nbsp
-                                                        <input type="text" style="width:80%" class="form-control" id="isolation1" name="isolation1" value="" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="isolation1" ><b>Isolation done by:</b></label>&nbsp&nbsp&nbsp
+                                                        <input type="text" style="width:80%" class="form-control" name="isolation1" value="" placeholder="" >
                                                     </div>
                                         </div>
                                                 </td>
@@ -231,5 +228,6 @@
         
         <!--================login_part end =================-->
     </main>
+
 
     @endsection

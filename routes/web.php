@@ -92,6 +92,9 @@ Route::get('/sapproved/{id}',[safety::class,'sapproved']);
 Route::get('/mrejected/{id}',[maintanencecontroller::class,'mrejected']);
 
 Route::get('/view/{id}',[security::class,'view']); 
+Route::get('/rview/{id}',[security::class,'rview']); 
+Route::get('/rview/{id}',[maintanencecontroller::class,'rview']); 
+Route::get('/rview/{id}',[safety::class,'rview']); 
 
 Route::get('/sview/{id}',[maintanencecontroller::class,'view']); 
 Route::get('/printview/{id}',[usercontroller::class,'print']);
@@ -106,6 +109,10 @@ Route::get('/sessiondelete',function(){
     return view('login');
 });
 
+// Route::get('/htmlPdf',[usercontroller::class,'pdfDownload']);
 
+route::get('/securityreport',[security::class,'getreport']);
 
+route::get('/maintanencereport',[maintanencecontroller::class,'getreport']);
 
+route::get('/safetyreport',[safety::class,'getreport']);

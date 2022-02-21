@@ -3,14 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\maintenance;
+use App\Models\safety;
 use App\Models\form;
 
 
 class maintanencecontroller extends Controller
 {
 
+    public function getreport()
+    {
+        $getdate1=request('date1');
+        $getdate2=request('date2');
+          
+        $data=form::select('*')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        
+        return view('maintanencereport',compact('data'));
+    }
 
+    public function rview($id)
+    {
+        $data=form::find($id);
+        return view('maintanenceviewreport',compact('data'));
+    }
 
     public function showreq()
     {
@@ -77,8 +91,8 @@ class maintanencecontroller extends Controller
         $uisolation1 = request('isolation1');
         $utool = request('tools');
         $checkstr = implode(',',$utool);
+        //dd($utool);
         $uprecuation = request('prec');
-        // echo $checkstr;
         $uremarks = request('remarks');
 
 
@@ -114,7 +128,6 @@ class maintanencecontroller extends Controller
             'safety9'=>'required',
             'safety10'=>'required',
             'isolation'=>'required',
-            'isolation1'=>'required',
             'tools'=>'required',
             'prec'=>'required',
             'remarks'=>'required',  
@@ -124,7 +137,7 @@ class maintanencecontroller extends Controller
 
 
        
-                $l = new maintenance();
+                $l = new safety();
 
                 $l->pid=$req;
                 $l->FireExtinguisher=$ufe;

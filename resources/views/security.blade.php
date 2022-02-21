@@ -80,7 +80,7 @@
                                         <td style="padding:10px"><b>Work Details</b></td>
                                         <td style="padding:10px"><b>Equipments Used</b></td>
                                         <td style="padding:10px"><b>Temprory Electric</b></td> -->
-                                        <td><b>Status</b></td>
+                                        <td><b>Security Status</b></td>
                                         <td><b>View</b></td>
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
@@ -89,7 +89,7 @@
                                     
                                     <tr>
                                         <td>{{$l->id}}</td>
-                                        <td>{{ Carbon\Carbon::parse($l->date)->format('y-m-d')}}</td>
+                                        <td>{{ Carbon\Carbon::parse($l->date)->format('d-m-Y')}}</td>
                                         <td>{{$l->location}}</td>
                                         <td>{{$l->name}}</td>
                                         <td>{{$l->desig}}</td>

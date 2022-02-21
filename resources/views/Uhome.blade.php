@@ -2,6 +2,13 @@
 
 @section('content')
 <body>
+    <?php 
+    $current=date("Y-m-d");
+    $endate=date('Y-m-d', strtotime($current. ' + 15 days'));
+    // $date = strtotime($current);
+    // $ts=date('h:i A', strtotime($current));
+    // echo $ts;
+    ?>
     <header>
         
                     <!-- Mobile Menu -->
@@ -14,22 +21,7 @@
         <!-- Header End -->
     </header>
     <main>
-        <!-- Hero Area Start-->
-        <!-- <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Add Category</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Hero Area End-->
-        <!--================login_part Area =================-->
+      
         
         <section class="login_part">
            
@@ -116,13 +108,13 @@
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Date"><b>Date From:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="date" class="form-control" style="width:60%" id="fdate" name="fdate" value=""
+                                                        <input type="date" class="form-control" style="width:60%" id="fdate" name="fdate" value="<?php echo $current;?>"
                                                         placeholder="Date"></Label> 
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Date"><b>To:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value=""
+                                                        <input type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value="<?php echo $endate;?>"
                                                         placeholder="Date"></Label> 
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>

@@ -9,6 +9,21 @@ use Carbon\Carbon;
 
 class security extends Controller
 {
+    public function getreport()
+    {
+        $getdate1=request('date1');
+        $getdate2=request('date2');
+          
+        $data=form::select('*')->where('securitystatus','=','approved')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        
+        return view('securityreport',compact('data'));
+    }
+
+    public function rview($id)
+    {
+        $data=form::find($id);
+        return view('securityreportview',compact('data'));
+    }
  
     public function showreq()
     {

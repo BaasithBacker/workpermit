@@ -5,27 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\form;
 use App\Models\register;
-use App\Models\maintenance;
+use App\Models\safety;
 use Carbon\Carbon;
-
+use \Barryvdh\DomPDF\Facade\Pdf;
 
 class usercontroller extends Controller
 {
+  
     public function print($id)
     {
-        $data=form::join('maintenances','forms.id','maintenances.pid')
-        ->select('forms.*','maintenances.*')->find($id);
-      
+        $data=form::join('safeties','forms.id','safeties.pid')->select('forms.*','safeties.*')->find($id);
 
         return view('print',compact('data'));
     }
 
-    public function download($id)
-    {
-       
-        
-       
-    }
 
     public function showreqqq()
     {
@@ -63,7 +56,7 @@ class usercontroller extends Controller
         $ucno = request('cno');   
         $uno = request('no');
         $uinsurance = request('insurance');
-        $uloc = request('eloc');
+        $ulocation = request('eloc');
         $udesc = request('desc');
         $utool=request('tools');
         $checkstr1=implode(',',$utool);
@@ -117,7 +110,7 @@ class usercontroller extends Controller
                 $l->supervisorcontact=$ucno;
                 $l->noofpersons=$uno; 
                 $l->insurance=$uinsurance; 
-                $l->joblocation=$uloc;
+                $l->joblocation=$ulocation;
                 $l->workdetails=$udesc;
                 $l->equipmentsused=$checkstr1;
                 $l->tempelectric=$uelec; 

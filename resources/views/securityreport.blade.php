@@ -48,24 +48,39 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="login_part_form">
                             <div class="">
-                           
-                                <form class="row contact_form" action="/security" method="get" novalidate="novalidate">
+                                
+                                <form class="row contact_form" action="securityreport" method="get" novalidate="novalidate">
                                 {{csrf_field()}}
-                                <center><h3>Pending Request's</h3></center>  
+                                
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                <center><h3>Security Report's</h3></center>
+                                </div>  
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="date" name="date1" class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="date" name="date2" class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <button class="btn btn-danger">Search</button>
+                                </div>   
+                              
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>
+                                
                                 <div class="col-lg-10 col-md-10 col-sm-10">
-                                <table style="" class="table table-bordered table-primary table-responsive">
-                                   
+                                <table class="table table-bordered table-primary table-responsive">
                                     <tr>
-                                        <td style="padding:10px"><b>Permit Number</b></td>
-                                        <td style="padding:10px"><b>Date Of Issued</b></td>
-                                        <td style="padding:10px"><b>Location</b></td>
-                                        <td style="padding:10px"><b>Name Of Requestor</b></td>
-                                        <td style="padding:10px"><b>Designation</b></td>
-                                        <td style="padding:10px"><b>Department</b></td>
-                                        <td style="padding:10px"><b>Employee Number</b></td>
-                                        <td style="padding:10px"><b>Contact Number</b></td>
+                                        <td><b>Permit Number</b></td>
+                                        <td><b>Date Of Issued</b></td>
+                                        <td><b>Location</b></td>
+                                        <td><b>Name Of Requestor</b></td>
+                                        <td><b>Designation</b></td>
+                                        <td><b>Department</b></td>
+                                        <td><b>Employee Number</b></td>
+                                        <td><b>Contact Number</b></td>
                                         <!-- <td style="padding:10px"><b>From Date</b></td>
                                         <td style="padding:10px"><b>To Date</b></td>
                                         <td style="padding:10px"><b>From Time</b></td>
@@ -79,12 +94,8 @@
                                         <td style="padding:10px"><b>Work Details</b></td>
                                         <td style="padding:10px"><b>Equipments Used</b></td>
                                         <td style="padding:10px"><b>Temprory Electric</b></td> -->
-                                        <td style="padding:10px"><b>SecurityStatus</b></td>
-                                        
-                                        <td style="padding:10px"><b>MaintenanceStatus</b></td>
-                                        <td style="padding:10px"><b>SafetyStatus</b></td>
-                                        
-                                        <td style="padding:10px"><b>View</b></td>
+                                        <td><b>Security Status</b></td>
+                                        <!-- <td><b>View</b></td> -->
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
 
@@ -113,13 +124,8 @@
                                         <td>{{$l->equipmentsused}}</td>
                                         <td>{{$l->tempelectric}}</td> -->
                                         <td>{{$l->securitystatus}}</td>
-                                    
-                                        <td>{{$l->maintanancestatus}}</td>
-                                        <td>{{$l->safetystatus}}</td>
-                                       
-                                        
                                         <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
+                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('rview',$l->id)}}">View</a>
                                         </td>
 
                                         <!-- <td>
@@ -129,10 +135,10 @@
                                     </tr>
                                
                                     @endforeach
-                               
+                              
                                 </table>
-                             
-                                </div>
+                                {{$data->links()}}
+                                </div> 
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>
 

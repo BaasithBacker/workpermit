@@ -88,7 +88,7 @@
                                     
                                     <tr>
                                         <td>{{$l->id}}</td>
-                                        <td>{{ Carbon\Carbon::parse($l->date)->format('y-m-d')}}</td>
+                                        <td>{{ Carbon\Carbon::parse($l->date)->format('d-m-Y')}}</td>
                                         <td>{{$l->location}}</td>
                                         <td>{{$l->name}}</td>
                                         <td>{{$l->desig}}</td>

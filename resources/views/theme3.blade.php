@@ -47,7 +47,7 @@
                                         <ul class="submenu">
                                         <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
                                             <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
-                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+                                            <li><a style="text-decoration:none;" href="/securityreport">Reports</a></li>
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
@@ -111,7 +111,7 @@
                                         <ul class="submenu">
                                         <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
                                             <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
-                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+                                            <li><a style="text-decoration:none;" href="/maintanencereport">Reports</a></li>
 
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
@@ -134,19 +134,19 @@
                     <div class="menu-wrapper" >
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="/maintenance"><img src="../assets/img/logo/logo.png" alt=""></a>
+                            <a href="/safety"><img src="../assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block ml-auto">
                             <nav>                                                
                                 <ul id="navigation">  
-                                    <li><a style="text-decoration:none;" href="/maintenance">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="/safety">Home</a></li>
                                     <li><a style="text-decoration:none;" href="/Uhome">Submit Form</a></li>
                                     <li><a style="text-decoration:none;" href="#">My Request</a>    
                                         <ul class="submenu">
                                         <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
                                             <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
-                                            <li><a style="text-decoration:none;" href="">Reports</a></li>
+                                            <li><a style="text-decoration:none;" href="/safetyreport">Reports</a></li>
 
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
@@ -171,10 +171,10 @@
     else if($utype->usertype == "staff"){
         echo "<script>document.getElementById('usermenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "maintanance"){
+    else if($utype->usertype == "maintanence"){
         echo "<script>document.getElementById('maintenancemenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "maintanance"){
+    else if($utype->usertype == "safety"){
         echo "<script>document.getElementById('safetymenu').style.display='block';</script>";
     }
 ?>

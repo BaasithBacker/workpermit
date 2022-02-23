@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\form;
+use App\Models\register;
 
 class safety extends Controller
 {
@@ -30,16 +31,18 @@ class safety extends Controller
     public function showreq()
     {
 
-        $data=form::where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('safetystatus','=','waiting')->get();
+        $data=form::where('securitystatus','like','approved%')->where('maintanancestatus','like','approved%')->where('safetystatus','=','waiting')->get();
 
         return view('safety',compact('data'));
     }
 
     public function sapproved($id)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
         $data=form::find($id);
 
-        $data->maintanancestatus='Approved';
+        $data->maintanancestatus='Approved by '.$LoggedUserInfo->name;
 
         $data->save();
 
@@ -50,12 +53,14 @@ class safety extends Controller
    
     public function rejected(Request $request)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
         $pid = request('pid');
         $reason=request('rejReason');
 
         $data=form::find($pid);
 
-        $data->safetystatus='Rejected-'.$reason;
+        $data->safetystatus='Rejected by '.$LoggedUserInfo->name.' - reason - '.$reason;
 
         $data->save();
 

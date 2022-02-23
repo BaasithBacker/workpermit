@@ -58,7 +58,7 @@ class loginactivity extends Controller
                 //    echo session('sname')->id;
                    echo "<script>alert('Successfully Logined,Welcome');window.location='/Uhome';</script>"; 
                 }
-                else if($ut->usertype=='maintanence')
+                else if($ut->usertype=='maintenance')
                 {
                     $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
                     $i=register::where('empno','like',"$uempno")->first();
@@ -88,7 +88,7 @@ class loginactivity extends Controller
              }
              else
             {
-                echo "<script>alert('Something went Wrong,Invalid User');window.location='/Login';</script>";
+                echo "<script>alert('Something went Wrong,Invalid User');window.location='/login';</script>";
             }
         }
     }
@@ -123,7 +123,7 @@ class loginactivity extends Controller
                 $l->deptname=$udeptname;
                 $l->empno=$uempno;
                 $l->password=$p1;
-                $l->usertype="staff";
+                $l->usertype="Staff";
 
                 $l->save();
                 

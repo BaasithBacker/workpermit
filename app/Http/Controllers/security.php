@@ -14,7 +14,7 @@ class security extends Controller
         $getdate1=request('date1');
         $getdate2=request('date2');
           
-        $data=form::select('*')->where('securitystatus','=','approved')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
         
         return view('securityreport',compact('data'));
     }
@@ -27,16 +27,20 @@ class security extends Controller
  
     public function showreq()
     {
-        $data=form::where('securitystatus','=','waiting')->Paginate(2);
+        $data=form::where('securitystatus','=','waiting')->Paginate(10);
 
         return view('security',compact('data'));
     }
 
-    public function approved($id)
+    public function approved($id,Request $request)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
+        
         $data=form::find($id);
 
-        $data->securitystatus='Approved';
+        $data->securitystatus='Approved by '.$LoggedUserInfo->name;
+     
 
         $data->save();
 
@@ -46,13 +50,15 @@ class security extends Controller
 
     public function rejected(Request $request)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+        // dd($LoggedUserInfo->name);
 
         $pid = request('pid');
         $reason=request('rejReason');
 
         $data=form::find($pid);
 
-        $data->securitystatus='Rejected-'.$reason;
+        $data->securitystatus='Rejected by '.$LoggedUserInfo->name.' - reason - '.$reason;
 
         $data->save();
 
@@ -62,8 +68,9 @@ class security extends Controller
 
     public function view($id)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
         $data=form::find($id);
-        return view('securityview',compact('data'));
+        return view('securityview',compact('data','LoggedUserInfo'));
     }
 
     public function store(Request $request)

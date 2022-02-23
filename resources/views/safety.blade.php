@@ -51,7 +51,7 @@
                            
                                 <form class="row contact_form" action="/security" method="get" novalidate="novalidate">
                                 {{csrf_field()}}
-                                <center><h3>Pending Request's</h3></center>  
+                                <center><h3>Safety Department Pending Request's</h3></center>  
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-10">

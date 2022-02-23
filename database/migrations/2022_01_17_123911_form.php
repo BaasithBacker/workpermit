@@ -36,9 +36,9 @@ class Form extends Migration
             $table->String('workdetails');
             $table->String('equipmentsused');
             $table->String('tempelectric');
-            $table->String('securitystatus');
-            $table->String('safetystatus');
-            $table->String('maintanancestatus');
+            $table->text('securitystatus');
+            $table->text('safetystatus');
+            $table->text('maintanancestatus');
             $table->timestamps();
         });
     }

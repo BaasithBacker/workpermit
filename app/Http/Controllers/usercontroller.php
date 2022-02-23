@@ -43,7 +43,7 @@ class usercontroller extends Controller
     public function showreqq()
     {
         
-        $data=form::where('safetystatus','=','approved')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->where('empno','=',session('sid'))->Paginate(10);
+        $data=form::where('safetystatus','like','approved%')->where('securitystatus','like','approved%')->where('maintanancestatus','like','approved%')->where('empno','=',session('sid'))->Paginate(10);
 
         return view('approvedreq',compact('data'));
     }

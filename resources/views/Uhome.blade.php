@@ -108,13 +108,13 @@
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Date"><b>Date From:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="date" class="form-control" style="width:60%" id="fdate" name="fdate" value="<?php echo $current;?>"
+                                                        <input type="date" class="form-control" onchange="change()" style="width:60%" id="fdate" name="fdate" value=""
                                                         placeholder="Date"></Label> 
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Date"><b>To:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value="<?php echo $endate;?>"
+                                                        <input type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value=""
                                                         placeholder="Date"></Label> 
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>
@@ -260,7 +260,15 @@
                     </div>
 
 
-                                            
+                              <script>
+                                function change(){
+                                    fdate = new Date($('#fdate').val());
+                                    tdate = new Date(fdate.setDate(fdate.getDate()+15)).toISOString().split('.');
+                                    console.log(tdate);
+                                    output=tdate[0].split('T');
+                                    $('#tdate').val(output[0]);
+                                }
+                              </script>              
                                  
                                         
                                    

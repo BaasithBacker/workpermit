@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\safety;
 use App\Models\form;
+use App\Models\register;
 
 
 class maintanencecontroller extends Controller
@@ -15,7 +16,7 @@ class maintanencecontroller extends Controller
         $getdate1=request('date1');
         $getdate2=request('date2');
           
-        $data=form::select('*')->where('securitystatus','=','approved')->where('maintanancestatus','=','approved')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
         
         return view('maintanencereport',compact('data'));
     }
@@ -29,7 +30,7 @@ class maintanencecontroller extends Controller
     public function showreq()
     {
 
-        $data=form::where('maintanancestatus','=','waiting')->where('securitystatus','=','approved')->get();
+        $data=form::where('maintanancestatus','like','waiting')->where('securitystatus','like','Approved%')->get();
 
         return view('maintenance',compact('data'));
     }
@@ -43,11 +44,11 @@ class maintanencecontroller extends Controller
 
     public function mapproved($id)
     {
-        
-        
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
         $data=form::find($id);
 
-        $data->maintanancestatus='Approved';
+        $data->maintanancestatus='Approved by '.$LoggedUserInfo->name;
 
         $data->save();
 
@@ -136,7 +137,8 @@ class maintanencecontroller extends Controller
         
 
 
-       
+                $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
                 $l = new safety();
 
                 $l->pid=$req;
@@ -159,7 +161,7 @@ class maintanencecontroller extends Controller
 
                 $data=form::find($req);
 
-                $data->safetystatus='Approved';
+                $data->safetystatus='Approved by '.$LoggedUserInfo->name;
         
                 $data->save();
 
@@ -168,13 +170,14 @@ class maintanencecontroller extends Controller
     }
     public function rejected(Request $request)
     {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
         $pid = request('pid');
         $reason=request('rejReason');
 
         $data=form::find($pid);
 
-        $data->maintanancestatus='Rejected-'.$reason;
-
+        $data->maintanancestatus='Rejected by '.$LoggedUserInfo->name.' - reason - '.$reason;
         $data->save();
 
        return redirect('/maintenance');

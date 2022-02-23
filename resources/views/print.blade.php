@@ -20,11 +20,16 @@
                         
                                     <table id="example" class="table table-bordered table-justify ">
                                         <tbody>
+                                            <tr>
+                                                <td>
+                                                <center><h3>Permit To Work Request</h3></center>
+                                                </td>
+                                            </tr>
                                         <tr> 
                                             <td>
                                                 
                                                 <div class="row align-items-center" style="margin: 0px;">
-                                                <center><h3>Permit To Work Request</h3></center>
+                                                
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         
                                                         <label class="pr-3" for="date"><b>Permit Number:</b></label>   
@@ -219,7 +224,7 @@
 
                                              <tr>
                                             <td>
-                                                <table class="bordered">
+                                               
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                 <input  type="text" name="pid" value="{{$data->id}}" hidden="true">
@@ -313,7 +318,7 @@
 
                                             </td>
                                         </tr>
-                                        </table>
+                                  
 
                                             <tr>
                                                 <td>
@@ -397,31 +402,33 @@
                                                 </div>
                                                 </td>
                                            </tr>
-
-                                           <tr>
-                                                <td>
-                                                <div class="row align-items-center">
-                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label style="margin-right: 2%;" class="pl-6"><b>Security Department</b></label>   
-                                                <label for=""><b>{{$data->securitystatus}}</b></label>
-                                                </div>
-                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label style="margin-right: 2%;" class="pl-6"><b>Maintenance Department</b></label>   
-                                                <label for=""><b>{{$data->safetystatus}}</b></label>
-                                                </div>
-                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label style="margin-right: 2%;" class="pl-6"><b>Safety Department</b></label>   
-                                                <label for=""><b>{{$data->maintanancestatus}}</b></label>
-                                                </div>
-                                                </div>
+                                           </tbody>
+                                    </table>
+                                    <table class="table table-bordered ">
+                                        <tbody>
+                                            <tr >
+                                                <td >
+                                                    <div class="row align-items-center">
+                                                        <div class="col-4 col-lg-4 form-group align-items-center">
+                                                            <label style="margin-right: 2%;" class="pl-6"><b>Security Department</b></label><br>
+                                                            <label for=""><b>{{$data->securitystatus}}</b></label>
+                                                        </div>
+                                                        <div class="col-4 col-lg-4 form-group align-items-center">
+                                                            <label style="margin-right: 2%;" class="pl-6"><b>Maintenance Department</b></label><br>
+                                                            <label for=""><b>{{$data->maintanancestatus}}</b></label>   
+                                                        </div>
+                                                        <div class="col-4 col-lg-4 form-group align-items-center">
+                                                            <label style="margin-right: 2%;" class="pl-6"><b>Safety Department</b></label><br>
+                                                            <label for=""><b>{{$data->safetystatus}}</b></label>   
+                                                        </div>
+                                                    </div>
                                                 </td>
-                                           </tr>
-                                         
-                                           
+                                            </tr>
+                                        </tbody>
+                                      </table>
                                             
 
-                                        </tbody>
-                                    </table>
+                                        
                                     <tr>
                                            <td>
                                                 <div class="row align-items-center">

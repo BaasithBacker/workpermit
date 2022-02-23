@@ -249,7 +249,7 @@
         </button>
       </div>
       <div class="modal-body">
-          <form action="/rejectedreq" method="post" id="rejectform">
+          <form action="/rejectedreqq" method="post" id="rejectform">
             {{csrf_field()}}
             <input type="hidden" class="form-control" name="pid" value={{$data->id}}>
             <input type="text" class="form-control" name="rejReason">

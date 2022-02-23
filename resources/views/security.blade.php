@@ -52,7 +52,7 @@
                                 <form class="row contact_form" action="/security" method="get" novalidate="novalidate">
                                 {{csrf_field()}}
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                <center><h3>Pending Request's</h3></center>
+                                <center><h3>Security Department Pending Request's</h3></center>
                                 </div>  
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>

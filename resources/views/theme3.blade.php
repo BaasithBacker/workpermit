@@ -171,7 +171,7 @@
     else if($utype->usertype == "staff"){
         echo "<script>document.getElementById('usermenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "maintanence"){
+    else if($utype->usertype == "maintenance"){
         echo "<script>document.getElementById('maintenancemenu').style.display='block';</script>";
     }
     else if($utype->usertype == "safety"){

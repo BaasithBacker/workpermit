@@ -8,10 +8,23 @@ use App\Models\register;
 use App\Models\safety;
 use Carbon\Carbon;
 use \Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\App;
+use Dompdf\Dompdf;
 
 class usercontroller extends Controller
 {
   
+    public function pdfdownload($id)
+    {       
+     
+        $data=form::join('safeties','forms.id','safeties.pid')->select('forms.*','safeties.*')->find($id);
+
+        $pdf=PDF::loadView('print',['data' => $data])->setOptions(['defaultFont' => 'sans-serif']);
+
+        return $pdf->stream('requestform.pdf');
+    
+    }
+
     public function print($id)
     {
         $data=form::join('safeties','forms.id','safeties.pid')->select('forms.*','safeties.*')->find($id);

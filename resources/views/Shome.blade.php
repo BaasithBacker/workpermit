@@ -170,13 +170,13 @@
                                                 <label><b>Training/Toolbox Talk Details</b></label>
                                                 </div>
                                                     <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                    <label class="px-4"><input type="checkbox" name="tools" value="firesafety"><b>Fire Safety </b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Electricalsafety"><b>Electrical Safety</b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Workingatheight"><b>Working at height</b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="PPEsafety"><b>PPE Safety</b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="ConfinedSpaceSafety"><b>Confined Space Safety</b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Housekeeping"><b>House keeping</b></label>
-                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Incidentreporting"><b>Incident Reporting</b></label>
+                                                    <label class="px-4"><input type="checkbox" name="tools" value="Fire Safety"><b>Fire Safety </b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Electrical Safety"><b>Electrical Safety</b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Working at height"><b>Working at height</b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="PPE Safety"><b>PPE Safety</b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Confined Space Safety"><b>Confined Space Safety</b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="House Keeping"><b>House keeping</b></label>
+                                                    <label class="pl-4"><input type="checkbox" name="tools[]" value="Incident Reporting"><b>Incident Reporting</b></label>
                                                     </div>
                                                 </div>
                                             

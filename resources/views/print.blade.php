@@ -1,19 +1,14 @@
-@extends('theme3')
+@extends('theme')
 
 
 @section('content')
+
+<style>
+  
+</style>
+
 <body>
-    <header>
-        
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
+    
     <main>
       
         
@@ -22,28 +17,28 @@
                     <div class="container mt-4 mb-4">
                         <div class="row align-items-center">
                             <div class="col-12 col-lg-12">
-                               <center><h3>Permit To Work Request</h3></center>
-                                <form  class="row contact_form" action="" method="post" novalidate="novalidate">
-                              
-                                    <table id="example" class="table table-bordered table-justify">
+                        
+                                    <table id="example" class="table table-bordered table-justify ">
                                         <tbody>
-                                        <tr>
+                                        <tr> 
                                             <td>
-                                                <div class="row align-items-center">
+                                                
+                                                <div class="row align-items-center" style="margin: 0px;">
+                                                <center><h3>Permit To Work Request</h3></center>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="date"><b>Permit Number:</b></label>&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:80%" class="form-control" id="date" name="date" value="{{$data->id}}" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        
+                                                        <label class="pr-3" for="date"><b>Permit Number:</b></label>   
+                                                        <label style="margin-left:2%;">{{$data->id}}</label>   
+                                                        <!-- <input style="outline:none;"  readonly type="text"  class="form-control" id="date" name="date" value="{{$data->id}}" placeholder=""> -->
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="date"><b>Date Issued:</b></label>&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:80%" class="form-control" id="date" name="date" value="{{Carbon\Carbon::parse($data->date)->format('d-m-Y')}}" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
-                                                    </div>
+                                                        <label for="date"><b>Date Issued:</b></label>   
+                                                        <label style="margin-left:2%;">{{Carbon\Carbon::parse($data->date)->format('d-m-Y')}}</label>   
+                                                        <!-- <input readonly type="text" class="form-control" id="date" name="date" value="{{Carbon\Carbon::parse($data->date)->format('d-m-Y')}}" placeholder=""> -->                                                    </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="location"><b>Location:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text"  class="form-control" id="location" name="location" value="{{$data->location}}" placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                        <label for="location"><b>Location:</b></label>  
+                                                        <label style="margin-left:2%;">{{$data->location}}</label>                  
+                                                        <!-- <input readonly type="text"  class="form-control" id="location" name="location" value="{{$data->location}}" placeholder=""> -->
                                                     </div>
                                                 </div>
                                             </td>
@@ -54,7 +49,7 @@
                                                     <div class="col-12 col-lg-12 form-group d-flex flex row align-items-center">
                                                         <label class="col-lg-2 pr-0" for="Electrical"><b>Types of Jobs:</b></label>
                                                         <div class="col-lg-10 pl-0">
-                                                            <label class="pr-3" for=""><b>{{$data->jobtypes}}</b></label>
+                                                            <label class="pr-3" for="">{{$data->jobtypes}}</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,30 +60,31 @@
                                             <div class="row align-items-center">
                                             <label for="name"><b>Requestor/Person in charge</b></label>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                        <label for="name"><b>Name:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:82%" class="form-control" id="name" name="name" value="{{$data->name}}" placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                    <label for="name"><b>Name:</b></label> 
+                                                    <label style="margin-left:2%;">{{$data->name}}</label>                 
+                                                    <!-- <input readonly type="text"  class="form-control" id="name" name="name" value="  {{$data->name}}" placeholder=""> -->
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                        <label for="Designation"><b>Designation:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text"  class="form-control" id="Designation" name="Designation" value="{{$data->desig}}" placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                        <label for="Designation"><b>Designation:</b></label>   
+                                                        <label style="margin-left:2%;">{{$data->desig}}</label>     
+                                                        <!-- <input readonly type="text"  class="form-control" id="Designation" name="Designation" value="{{$data->desig}}" placeholder=""> -->
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center">
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="name"><b>Department:</b></label>
-                                                        <input readonly type="text"  class="form-control" id="Department" name="Department" value="{{$data->dept}}" placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                        <label for="Department"><b>Department:</b></label>
+                                                        <label style="margin-left:2%;">{{$data->dept}}</label>
+                                                        <!-- <input readonly type="text"  class="form-control" id="Department" name="Department" value="{{$data->dept}}" placeholder=""> -->
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="empno"><b>Employee Number:</b></label>
-                                                        <input readonly type="text"  class="form-control" id="empno" name="empno" value="{{$data->empno}}" placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                        <label style="margin-left:2%;">{{$data->empno}}</label>
+                                                        <!-- <input readonly type="text"  class="form-control" id="empno" name="empno" value="{{$data->empno}}" placeholder=""> -->
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Contactno"><b>Contact Number:</b></label>
-                                                        <input readonly type="text"  class="form-control" id="Contactno" name="Contactno" value="{{$data->contactno}}" placeholder="">
+                                                        <label style="margin-left:2%;">{{$data->contactno}}</label>
+                                                        <!-- <input readonly type="text"  class="form-control" id="Contactno" name="Contactno" value="{{$data->contactno}}" placeholder=""> -->
                                                         <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                     </div>
                                                 </div>
@@ -101,16 +97,14 @@
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="text"><b>Date From:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="date" class="form-control" style="width:60%" id="fdate" name="fdate" value="{{$data->fdate}}"
-                                                        placeholder="Date"></Label> 
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="text"><b>Date From:</b></label>   
+                                                        <label style="margin-left:2%;">{{Carbon\Carbon::parse($data->fdate)->format('d-m-Y')}}</label>     
+                                                        <!-- <input readonly type="date" class="form-control"  id="fdate" name="fdate" value="{{$data->fdate}}" placeholder="Date"></Label>  -->
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="Date"><b>To:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value="{{$data->tdate}}"
-                                                        placeholder="Date"></Label> 
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="Date"><b>To:</b></label>    
+                                                        <label style="margin-left:2%;">{{Carbon\Carbon::parse($data->tdate)->format('d-m-Y')}}</label>    
+                                                        <!-- <input readonly type="date" class="form-control"  id="tdate" name="tdate" value="{{$data->tdate}}"placeholder="Date"></Label>  -->
                                                     </div>
                                             </div>
 
@@ -119,16 +113,13 @@
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="Date"><b>Time From:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="time" class="form-control" style="width:60%" id="ftime" name="ftime" value="{{$data->ftime}}"
-                                                        placeholder=""></Label> 
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="Date"><b>Time From:</b></label>    
+                                                        <label style="margin-left:2%;">{{$data->ftime}}</label>    
+                                                        <!-- <input readonly type="time" class="form-control"  id="ftime" name="ftime" value="{{$data->ftime}}"placeholder=""></Label>  -->
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                        <label for="Date"><b>To:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="time" class="form-control" style="width:60%" id="ttime" name="ttime" value="{{$data->ttime}}"
-                                                        placeholder=""></Label> 
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="Date"><b>To:</b></label>
+                                                        <label style="margin-left:2%;">{{$data->ttime}}</label>        
                                                     </div>
                                             </div>
                                                 
@@ -140,44 +131,39 @@
                                             <div class="row align-items-center">
                                             <label class="col-md-12 form-group row" for=""><b>Applicant Details</b></label>
                                                     <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:80%" class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"
-                                                              placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>        
+                                                    <label style="margin-left:2%;">{{$data->agencyname}}</label>                
+                                                        <!-- <input readonly type="text"  class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"placeholder=""> -->
                                                     </div>
                                                     
                                             </div>
 
                                             <div class="row align-items-center">
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                    <label for="sname"><b>Name of the Supervisor at site:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                    &nbsp&nbsp<input readonly type="text" style="width:45%" class="form-control" id="Sname" name="Sname" value="{{$data->supervisorname}}"
-                                                        placeholder="">
-                                                        <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                    <label for="sname"><b>Name of the Supervisor at site:</b></label>    
+                                                    <label style="margin-left:2%;">{{$data->supervisorname}}</label>                  
+                                                      <!-- <input readonly type="text"  class="form-control" id="Sname" name="Sname" value="{{$data->supervisorname}}"placeholder=""> -->
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                    <label for="cno"><b>Contact Number:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                         <input readonly type="text" style="width:72%" class="form-control" id="cno" name="cno" value="{{$data->supervisorcontact}}"
-                                                         placeholder="">
-                                                         <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                    <label for="cno"><b>Contact Number:</b></label>      
+                                                    <label style="margin-left:2%;">{{$data->supervisorcontact}}</label>                
+                                                         <!-- <input readonly type="text"  class="form-control" id="cno" name="cno" value="{{$data->supervisorcontact}}" placeholder=""> -->
                                                     </div>
                                                     
                                             </div>
                                             <div class="row align-items-center">
                                                         <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                             <label for="no"><b>Number of persons involved:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                             &nbsp&nbsp&nbsp&nbsp&nbsp<input readonly type="number" style="width:45%" class="form-control" id="no" name="no" value="{{$data->noofpersons}}"
-                                                              placeholder="">
-                                                             <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                             <label for="no"><b>Number of persons involved:</b></label> 
+                                                             <label style="margin-left:2%;">{{$data->noofpersons}}</label>                     
+                                                                  <!-- <input readonly type="number"  class="form-control" id="no" name="no" value="{{$data->noofpersons}}"placeholder=""> -->
                                                         </div>
                                                         <div class="col-6 col-lg-6 form-group d-flex flex-row ">
-                                                             <label for="no"><b>Insurance:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                             <label for="no"><b>Insurance:</b></label>                 
                                                              
                                                                 <div class="col-md-12 form-group">
-                                                                   &nbsp;&nbsp; <label class="pr-3"><b>{{$data->insurance}}</b></label>
+                                                                     <label style="margin-left:2%;">{{$data->insurance}}</label>
                                                                       
                                                                 </div>
-                                                             <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                         </div>
                                                 </div>
                                                 
@@ -189,15 +175,14 @@
                                                 <div class="row align-items-center">
                                                 <label class="col-md-12 form-group row" for=""><b>Job Description</b></label>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                             <label for="no"><b>Exact Location of the job:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                               <input readonly class="form-control" style="width:80%" id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea>
-                                                                <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                             <label for="no"><b>Exact Location of the job:</b></label>  
+                                                             <label style="margin-left:2%;">{{$data->joblocation}}</label>                                          
+                                                               <!-- <input readonly class="form-control"  id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea> -->
                                                 </div>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                             <label for="no"><b>Work to be carried out in detail:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                             <input readonly class="form-control" style="width:80%" id="desc" name="desc" value="{{$data->workdetails}}"
-                                                             placeholder=""></textarea>
-                                                             <span style="color:red" >@error('desc') {{$message}} @enderror</span>
+                                                             <label for="no"><b>Work to be carried out in detail:</b></label>     
+                                                             <label style="margin-left:2%;">{{$data->workdetails}}</label>                 
+                                                             <!-- <input readonly class="form-control"  id="desc" name="desc" value="{{$data->workdetails}}"placeholder=""></textarea> -->
                                                 </div>
                                                 </div>
                                                   </td>
@@ -209,7 +194,7 @@
                                                     <div class="col-12 col-lg-12 form-group d-flex flex row align-items-center">
                                                         <label class="col-lg-2 pr-0" for="Electrical"><b>Equipments Used:</b></label>
                                                         <div class="col-lg-10 pl-0">
-                                                            <label class="px-3"><b>{{$data->equipmentsused}}</b></label>
+                                                            <label style="margin-left:2%;">{{$data->equipmentsused}}</label>
                                                       
                                                         </div>
                                                     </div>
@@ -221,11 +206,10 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row ">
-                                                             <label class="pr-0" for="no"><b>Temprory electrical connection:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                             <label class="pr-0" for="no"><b>Temprory electrical connection:</b></label>          
                                                                 <div class="col-md-8 form-group">
-                                                                <label><b>{{$data->tempelectric}}</b></label>
+                                                                <label style="margin-left:2%;">{{$data->tempelectric}}</label>
                                                                 </div>
-                                                             <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                         </div>
                                                         </div>
 
@@ -235,24 +219,25 @@
 
                                              <tr>
                                             <td>
+                                                <table class="bordered">
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                <input type="text" name="pid" value="{{$data->id}}" hidden="true">
+                                                <input  type="text" name="pid" value="{{$data->id}}" hidden="true">
                                                 <label  for="Safety Precautions"><b>Safety Precautions</b></label>
                                                 </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Fire Extinguisher:</b></label>
-                                                          <div class="col-md-12 form-group">
-                                                              <label class="px-3"><b>{{$data->FireExtinguisher}}</b></label>
+                                                          
+                                                              <label style="margin-left:2%;">{{$data->FireExtinguisher}}</label>
                                                              
-                                                          </div>
+                                                   
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Access to fire Hydrant:</b></label>
-                                                    <div class="col-md-12 form-group ">
-                                                     <label class="px-3" ><b>{{$data->AccesstofireHydrant}}</b></label>
+                                                    
+                                                     <label style="margin-left:2%;">{{$data->AccesstofireHydrant}}</label>
                                 
-                                                    </div>
+                                                   
                                                     </div>
                                                 </div>
 
@@ -260,16 +245,16 @@
                                                 
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Signage:</b></label>
-                                                          <div class="col-md-12 form-group">
-                                                              <label class="px-3"><b>{{$data->Signage}}</b></label>
-                                                          </div>
+                                                          
+                                                              <label style="margin-left:2%;">{{$data->Signage}}</label>
+                                                       
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Appropriate PPE:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                         <label class="px-3"><b>{{$data->AppropriatePPE}}</b></label>
+                                                    
+                                                         <label style="margin-left:2%;">{{$data->AppropriatePPE}}</label>
 
-                                                     </div>
+                                                     
                                                     </div>
                                                 </div>
 
@@ -278,18 +263,16 @@
                                                 
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Guardrails/Barricades:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->Guardrails}}</b></label>
-                                                      
-
-                                                    </div>
+                                                    
+                                                        <label style="margin-left:2%;">{{$data->Guardrails}}</label>
+                                                  
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Machine Safety:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->MachineSafety}}</b></label>
+                                                    
+                                                        <label style="margin-left:2%;">{{$data->MachineSafety}}</label>
 
-                                                    </div>
+                                               
                                                     </div>
                                                 </div>
 
@@ -297,17 +280,17 @@
                                               
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Adequate ventilation:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->Adequateventilation}}</b></label>
+                                                    
+                                                        <label style="margin-left:2%;">{{$data->Adequateventilation}}</label>
 
-                                                    </div>
+                                                   
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Adequate Lighting:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->AdequateLighting}}</b></label>
+                                                    
+                                                        <label style="margin-left:2%;">{{$data->AdequateLighting}}</label>
 
-                                                    </div>
+                                                    
                                                     </div>
                                                 </div>
 
@@ -315,21 +298,22 @@
                                                
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Electrical Safety:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->ElectricalSafety}}</b></label>
-                                                    </div>
+                                                    
+                                                        <label style="margin-left:2%;">{{$data->ElectricalSafety}}</label>
+                                                   
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->FallProtection}}</b></label>
+                                                   
+                                                        <label style="margin-left:2%;">{{$data->FallProtection}}</label>
 
-                                                    </div>
-                                                    </div>
+                                            
+                                                  
                                                 </div>
 
                                             </td>
                                         </tr>
+                                        </table>
 
                                             <tr>
                                                 <td>
@@ -337,17 +321,17 @@
                                             
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Isolation:</b></label>
-                                                    <div class="col-md-12 form-group">
-                                                        <label class="px-3"><b>{{$data->Isolation}}</b></label>
+                                             
+                                                        <label style="margin-left:2%;">{{$data->Isolation}}</label>
+                                                    
                                                     </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="row align-items-center">
                                             
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                        <label for="isolation1"><b>Isolation done by:</b></label>&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:90%" class="form-control" id="isolation1" name="isolation1" value="{{$data->isolation1}}" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                        <label for="isolation1"><b>Isolation done by:</b></label>  
+                                                        <label style="margin-left:2%;">{{$data->isolation1}}</label>    
+                                                        <!-- <input readonly type="text"  class="form-control" id="isolation1" name="isolation1" value="{{$data->isolation1}}" placeholder=""> -->
                                                     </div>
                                         </div>
                                                 </td>
@@ -360,7 +344,7 @@
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                 <label><b>Training/Toolbox Talk Details</b></label>
                                                 
-                                                    <label class="px-4"><b>{{$data->trainingtalk}} </b></label>
+                                                    <label style="margin-left:2%;">{{$data->trainingtalk}}</label>
                                                    
                                                     </div>
                                                 </div>
@@ -372,9 +356,9 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                <label class="pl-6"><b>Precuations to be taken prior to commencement and during work:</b></label>&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:60%" class="form-control" id="prec" name="prec" value="{{$data->precuation}}" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                <label class="pl-6"><b>Precuations to be taken prior to commencement and during work:</b></label>   
+                                                <label style="margin-left:2%;">{{$data->precuation}}</label>   
+                                                        <!-- <input readonly type="text"  class="form-control" id="prec" name="prec" value="{{$data->precuation}}" placeholder=""> -->
                                                 </div>
                                                 </div>
                                                 </td>
@@ -383,9 +367,9 @@
                                                <td>
                                            <div class="row align-items-center">
                                            <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">   
-                                                <label class="pl-6"><b>Remarks if any:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:90%" class="form-control " id="remarks" name="remarks" value="{{$data->remarks}}" placeholder="">
-                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                <label class="pl-6"><b>Remarks if any:</b></label>
+                                                <label style="margin-left:2%;">{{$data->remarks}}</label>              
+                                                        <!-- <input readonly type="text"  class="form-control " id="remarks" name="remarks" value="{{$data->remarks}}" placeholder=""> -->
                                                 </div>
                                                 </div>
                                                 </td>
@@ -395,7 +379,7 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                <label class="pl-6"><b>Performing authority acceptance(To be completed by contractor)</b></label>&nbsp&nbsp&nbsp
+                                                <label class="pl-6"><b>Performing authority acceptance(To be completed by contractor)</b></label>   
                                                 </div>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
 
@@ -411,7 +395,6 @@
                                                 <label for=""><b>Date</b></label>
                                                 </div>
                                                 </div>
-                                                </div>
                                                 </td>
                                            </tr>
 
@@ -419,84 +402,66 @@
                                                 <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label class="pl-6"><b>Security Department</b></label>&nbsp&nbsp&nbsp
+                                                <label style="margin-right: 2%;" class="pl-6"><b>Security Department</b></label>   
                                                 <label for=""><b>{{$data->securitystatus}}</b></label>
                                                 </div>
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label class="pl-6"><b>Maintenance Department</b></label>&nbsp&nbsp&nbsp
+                                                <label style="margin-right: 2%;" class="pl-6"><b>Maintenance Department</b></label>   
                                                 <label for=""><b>{{$data->safetystatus}}</b></label>
                                                 </div>
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
-                                                <label class="pl-6"><b>Safety Department</b></label>&nbsp&nbsp&nbsp
+                                                <label style="margin-right: 2%;" class="pl-6"><b>Safety Department</b></label>   
                                                 <label for=""><b>{{$data->maintanancestatus}}</b></label>
                                                 </div>
                                                 </div>
                                                 </td>
                                            </tr>
-                                          
-                                           
+                                         
                                            
                                             
 
-                                        </tbody
+                                        </tbody>
                                     </table>
-                                    
-                                </form>
-                                <tr>
-                                                <td>
+                                    <tr>
+                                           <td>
                                                 <div class="row align-items-center">
                                                 <div class="col-12 col-lg-12 ">
                                                     <center>
-                                                <a style="text-align:center;" id="pdf" value="approve" class="btn btn-success" href="/htmlPdf" >DOWNLOAD</a> </div>
-                                                    
+                                                <!-- <a style="text-align:center;" value="approve" class="btn btn-success" href="{{url('htmlPdf',$data->id)}}">DOWNLOAD</a> </div> -->
+                                                <button class="btn btn-success" onclick="myPrintFunction()" id="print">print</button>
+                                                    <script>
+                                                        function myPrintFunction() {
+                                                            var printButton = document.getElementById("print");
+                                                             //Set the print button visibility to 'hidden' 
+                                                             printButton.style.visibility = 'hidden';
+                                                          
+                                                            window.print();
+                                                          
+                                                        }
+                                                    </script> 
                                                 </center>
+                                                </div>
+                                                </div>
                                                 </td>
                                             </tr>
-                            </div>
+
                         </div>
-                    </div>             
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div>                  
+                    </div>         
           
         </section>
         
        
         <!--================login_part end =================-->
     </main>
-    <script type="text/javascript" src="src/jspdf.min.js"></script>
 
-<script type="text/javascript" src="src/jspdf.plugin.autotable.min.js"></script>
 
-<script type="text/javascript" src="src/tableHTMLExport.js"></script>
 
 <script type="text/javascript">
-  
-  $("#json").on("click",function(){
-    $("#example").tableHTMLExport({
-      type:'json',
-      filename:'permit.json'
-    });
-  });
-
-  $("#pdf").on("click",function(){
-    $("#example").tableHTMLExport({
-      type:'pdf',
-      filename:'permit.pdf',
-	  orientation:'landscape'
-    });
-  });
-
-  $("#csv").on("click",function(){
-    $("#example").tableHTMLExport({
-      type:'csv',
-      filename:'permit.csv'
-    });
-  });
+    
+   function printpage() {
+    window.print();
+}
 
 </script>
     @endsection

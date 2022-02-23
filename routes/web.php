@@ -7,7 +7,7 @@ use App\Http\Controllers\safety;
 use App\Http\Controllers\security;
 use App\Http\Controllers\usercontroller;
 use Carbon\Carbon;
-use Dompdf\Dompdf;
+use DomPDF\DomPDF;
 
 
 
@@ -22,18 +22,28 @@ use Dompdf\Dompdf;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('login');
-});
-
-Route::get('test', function () {
-  
 });
 
 Route::get('/Register', function () {
     return view('register');
 });
+
+
+Route::post('/Register1',[loginactivity::class,'store']);
+
+Route::post('/Login1',[loginactivity::class,'check']);
+
+Route::get('/sessiondelete',function(){
+    if(session()->has('sid'))
+    {
+        session()->pull('sid');
+    }
+    return view('login');
+});
+
+
 
 Route::get('/Uhome', function () {
     return view('Uhome');
@@ -52,9 +62,7 @@ Route::get('/securityform', function () {
 //     return view('Shome');
 // });
 
-Route::post('/Register1',[loginactivity::class,'store']);
 
-Route::post('/Login1',[loginactivity::class,'check']);
 
 Route::post('/Uhome1',[usercontroller::class,'store']);
 Route::post('/securityform1',[security::class,'store']);
@@ -101,18 +109,14 @@ Route::get('/printview/{id}',[usercontroller::class,'print']);
 
 Route::get('/mview/{id}',[safety::class,'view']); 
 
-Route::get('/sessiondelete',function(){
-    if(session()->has('sid'))
-    {
-        session()->pull('sid');
-    }
-    return view('login');
-});
 
-// Route::get('/htmlPdf',[usercontroller::class,'pdfDownload']);
+Route::get('/htmlPdf/{id}',[usercontroller::class,'pdfDownload']);
 
 route::get('/securityreport',[security::class,'getreport']);
 
 route::get('/maintanencereport',[maintanencecontroller::class,'getreport']);
 
 route::get('/safetyreport',[safety::class,'getreport']);
+
+
+

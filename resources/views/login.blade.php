@@ -1,4 +1,4 @@
-@extends('theme')
+@extends('logintheme')
 
 
 @section('content')

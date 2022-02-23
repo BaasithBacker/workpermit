@@ -163,7 +163,7 @@
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label for="cno"><b>Contact Number:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                         <input type="text" style="width:72%" class="form-control" id="cno" name="cno" value=""
+                                                         <input type="text" style="width:57%" class="form-control" id="cno" name="cno" value=""
                                                          placeholder="">
                                                          <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                     </div>
@@ -215,10 +215,10 @@
                                                     <div class="col-12 col-lg-12 form-group d-flex flex row align-items-center">
                                                         <label class="col-lg-2 pr-0" for="Electrical"><b>Equipments Used:</b></label>
                                                         <div class="col-lg-10 pl-0">
-                                                            <label class="pr-3"><input  type="checkbox" name="tools[]" value="Weldingmachine"><b>Welding Machine</b></label>
-                                                            <label class="px-3"><input  type="checkbox" name="tools[]" value="Gascutter"><b>Gas Cutter</b></label>
+                                                            <label class="px-3"><input  type="checkbox" name="tools[]" value="Welding Machine"><b>Welding Machine</b></label>
+                                                            <label class="px-3"><input  type="checkbox" name="tools[]" value="Gas Cutter"><b>Gas Cutter</b></label>
                                                             <label class="px-3"><input  type="checkbox" name="tools[]" value="Drilling/Grinding Machine"><b>Drilling/Grinding Machine</b></label>
-                                                            <label class="px-3"><input  type="checkbox" name="tools[]" value="Electricaltools"><b>Electrical Tools</b></label>
+                                                            <label class="px-3"><input  type="checkbox" name="tools[]" value="Electrical Tools"><b>Electrical Tools</b></label>
                                                             <label class="px-3"><input  type="checkbox" name="tools[]" value="Handtools"><b>Hand Tools</b></label>
                                                         </div>
                                                     </div>
@@ -245,11 +245,14 @@
                                                 <td>
                                                     <center><button style="width:50%" type="submit" value="submit" class="btn btn-success">
                                                         Submit
-                                                    </button></center>
+                                                    </button>
+                                                    
+                                                </center>
                                                     
                                                 </td>
                                             </tr>
-                                        </tbody
+                                
+                                        </tbody>
                                     </table>
                                 </form>
                             </div>
@@ -279,18 +282,10 @@
 
 
                                    
-                                    
-                                       
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                   
           
         </section>
-        </table>
+       
         <!--================login_part end =================-->
     </main>
 

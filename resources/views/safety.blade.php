@@ -119,7 +119,8 @@
                                        
                                         
                                         <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
+
+                                        <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
                                         </td>
 
                                         <!-- <td>

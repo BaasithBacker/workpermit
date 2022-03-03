@@ -2,6 +2,38 @@
 
 
 @section('content')
+<style>
+      th{
+        padding: 1rem 2rem;
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+        color:#f9fbff;
+        font-size: 0.9rem;
+      }
+      table {
+            border-collapse: collapse;
+            box-shadow: 0 5px 10px #e1e5ee;
+            background-color: white;
+            text-align: left;
+            overflow: hidden;
+            -moz-border-radius:10px;
+            -webkit-border-radius:10px;
+            border-radius:10px
+        }
+        ::before,
+        ::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          font-family: Mukta, sans-serif;
+          justify-content: center;
+          align-items: center;
+          color: #4f546c;
+          background-color: #f9fbff;
+        }
+  </style>
 <body>
     <header>
         
@@ -55,17 +87,14 @@
                                 <div class="col-lg-1 col-md-1 col-sm-1">
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-10">
-                                <table class="table table-bordered table-primary table-align-content-center">
+                                <table  class="table table-table-bordered table-striped ">
                                     <tr>
-                                        <td ><b>Permit Number</b></td>
-                                        <td ><b>Date Of Issued</b></td>
-                                        <td ><b>Location</b></td>
-                                        <td ><b>Name Of Requestor</b></td>
-                                        <td ><b>Department</b></td>
-                                        <td ><b>Contact Number</b></td>
-                                        <td ><b>Security Status</b></td>
-                                        <td ><b>maintanance Status</b></td>
-                                        <td ><b>Safety Status</b></td>
+                                        <th style="background-color:#4f546c;padding:10px;color:#fff;" >Permit Number</th>
+                                        <th style="background-color:#4f546c;padding:10px;">Date Of Issued</th>
+                                        <th style="background-color:#4f546c;padding:10px;">Security Status</th>
+                                        <th style="background-color:#4f546c;padding:10px;">maintanance Status</th>
+                                        <th style="background-color:#4f546c;padding:10px;">Safety Status</th>
+                                        <th style="background-color:#4f546c;padding:10px;">View</th>
                                         
                                         <!-- <td style="padding:10px"><b>Rejected</b></td> -->
                                     </tr>
@@ -75,14 +104,12 @@
                                     <tr>
                                         <td>{{$l->id}}</td>
                                         <td>{{ Carbon\Carbon::parse($l->date)->format('d-m-Y')}}</td>
-                                        <td>{{$l->location}}</td>
-                                        <td>{{$l->name}}</td>
-                                        <td>{{$l->dept}}</td>
-                                        <td>{{$l->contactno}}</td>
                                         <td>{{$l->securitystatus}}</td>
                                         <td>{{$l->maintanancestatus}}</td>
                                         <td>{{$l->safetystatus}}</td>
-                                        
+                                        <td>
+                                            <a id="btn" value="statusview" class="btn btn-danger" href="{{url('statusview',$l->id)}}">View</a>
+                                        </td>
                                   
                                        
                                     </tr>

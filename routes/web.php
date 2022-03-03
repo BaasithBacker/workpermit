@@ -100,6 +100,7 @@ Route::get('/sapproved/{id}',[safety::class,'sapproved']);
 Route::get('/mrejected/{id}',[maintanencecontroller::class,'mrejected']);
 
 Route::get('/view/{id}',[security::class,'view']); 
+Route::get('/statusview/{id}',[usercontroller::class,'statusview']); 
 Route::get('/rview/{id}',[security::class,'rview']); 
 Route::get('/rview/{id}',[maintanencecontroller::class,'rview']); 
 Route::get('/rview/{id}',[safety::class,'rview']); 

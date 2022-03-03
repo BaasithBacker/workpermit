@@ -13,6 +13,12 @@ use Dompdf\Dompdf;
 
 class usercontroller extends Controller
 {
+    public function statusview($id)
+    {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+        $data=form::find($id);
+        return view('statusview',compact('data','LoggedUserInfo'));
+    }
   
     public function pdfdownload($id)
     {       

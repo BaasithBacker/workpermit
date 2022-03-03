@@ -8,7 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-    
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../assets/css/flaticon.css">
@@ -20,9 +23,10 @@
     <link rel="stylesheet" href="../assets/css/slick.css">
     <link rel="stylesheet" href="../assets/css/nice-select.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
 
 </head>
@@ -63,7 +67,7 @@
 </div></div></div>
 
 <div class="header-area" id="usermenu" style="display: none;">
-            <div class="main-header header-sticky">
+            <div class="main-header header-sticky" style="margin:0px;padding:0px; width:100%;">
                 <div class="container-fluid">
                     <div class="menu-wrapper" >
                         <!-- Logo -->
@@ -87,9 +91,7 @@
                             </nav>
                         </div>
                         <!-- Header Right -->
-                        <div class="header-right">
-                         
-                        </div>
+                        
                     </div>
 </div></div></div>
 
@@ -121,9 +123,7 @@
                             </nav>
                         </div>
                         <!-- Header Right -->
-                        <div class="header-right">
-                         
-                        </div>
+                        
                     </div>
 </div></div></div>
 
@@ -156,9 +156,7 @@
                             </nav>
                         </div>
                         <!-- Header Right -->
-                        <div class="header-right">
-                         
-                        </div>
+                        
                     </div>
 </div></div></div>
 
@@ -184,7 +182,7 @@
 
 
 
-    
+   
 
     <script src="../assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
@@ -218,6 +216,7 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/main.js"></script>
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
 </body>
 </html>

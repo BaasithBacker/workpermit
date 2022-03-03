@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\register;
-use App\Models\login;
+use App\Models\form;
 
 
 class loginactivity extends Controller
 {
-
     public function check(Request $request)
     {
         $uempno=request('empno');
@@ -88,7 +87,7 @@ class loginactivity extends Controller
              }
              else
             {
-                echo "<script>alert('Something went Wrong,Invalid User');window.location='/login';</script>";
+                echo "<script>alert('Something went Wrong,Invalid User');window.location='/';</script>";
             }
         }
     }

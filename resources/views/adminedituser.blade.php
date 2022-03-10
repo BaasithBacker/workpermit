@@ -1,4 +1,4 @@
-@extends('admintheme')
+@extends('theme3')
 
 
 @section('content')
@@ -41,54 +41,60 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="login_part_form">
                             <div class="login_part_form_iner">
-                               <center><h3>Add New User's <br></h3></center> 
+                               <center><h3>Edit User's <br></h3></center> 
                                    
-                                <form class="row contact_form" action="/Register1" method="post" novalidate="novalidate">
+                                <form class="row contact_form" action="/RegisterEdit?eid={{$data->empno}}" method="post" novalidate="novalidate">
                                 {{csrf_field()}}
+
                                 <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="name" name="name" value=""
+                                        <input type="text" class="form-control" id="name" name="name" value="{{$data->name}}"
                                             placeholder="Name">
                                             <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="contact" name="contact" value=""
+                                        <input type="text" class="form-control" id="contact" name="contact" value="{{$data->contact}}"
                                             placeholder="contact">
                                             <span style="color:red" >@error('contact') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="deptname" name="deptname" value=""
+                                    <select required="true" name="role" id="role" class="form-control">
+                                    <option selected="true" disabled="disabled" value="{{$data->usertype}}">{{$data->usertype}}</option>
+                                    
+                                    @if($data->usertype == "Staff")
+                                    <option value="Security Department">Security Department</option>
+                                    <option value="Maintenance Department">Maintenance Department</option>
+                                    <option value="Safety Department">Safety Department</option>
+                                    @elseif($data->usertype == "Security Department")
+                                    <option value="Staff">Staff</option>
+                                    <option value="Maintenance Department">Maintenance Department</option>
+                                    <option value="Safety Department">Safety Department</option>
+                                    @elseif($data->usertype == "Maintenance Department")
+                                    <option value="Staff">Staff</option>
+                                    <option value="Security Department">Security Department</option>
+                                    <option value="Maintenance Department"></option>
+                                    <option value="Safety Department">Safety Department</option>
+                                    @elseif($data->usertype == "Safety Department")
+                                    <option value="Staff">Staff</option>
+                                    <option value="Security Department">Security Department</option>
+                                    <option value="Maintenance Department">Maintenance Department</option>
+                                    @endif                                    
+                                     </select>
+                                     </div>
+                                    <div class="col-md-12 form-group p_star">
+                                        <input type="text" class="form-control" id="deptname" name="deptname" value="{{$data->deptname}}"
                                             placeholder="Department Name">
                                             <span style="color:red" >@error('deptname') {{$message}} @enderror</span>
                                     </div>
                                     <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="empno" name="empno" value=""
+                                        <input type="text" class="form-control" id="empno" name="empno" value="{{$data->empno}}"
                                             placeholder="Employee Number">
                                             <span style="color:red" >@error('empno') {{$message}} @enderror</span>
                                     </div>
-                                    <div class="col-md-12 form-group p_star">
-                                    <select required="true" name="role" id="role" class="form-control">
-                                    <option selected="true" disabled="disabled" value="">--Select Role--</option>
-                                    <option value="Staff">Staff</option>
-                                    <option value="Security Department">Security Department</option>
-                                    <option value="Maintenance Department">Maintenance Department</option>
-                                    <option value="Safety Department">Safety Department</option>
-                                     </select>
-                                     </div>
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="password" name="password" value=""
-                                            placeholder="Password">
-                                            <span style="color:red" >@error('password') {{$message}} @enderror</span>
-                                    </div>
-                                   
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" value=""
-                                            placeholder="ConfirmPassword">
-                                            <span style="color:red" >@error('confirmpassword') {{$message}} @enderror</span>
-                                    </div>
+                                  
                                     <div class="col-md-12 form-group">
                                        
                                         <button type="submit" value="register" style="width:500px;" class="btn btn-danger btn-lg">
-                                            Register
+                                            Save
                                         </button>
                                        
                                     </div>

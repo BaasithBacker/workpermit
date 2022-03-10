@@ -5,6 +5,7 @@ use App\Http\Controllers\loginactivity;
 use App\Http\Controllers\maintanencecontroller;
 use App\Http\Controllers\safety;
 use App\Http\Controllers\security;
+use App\Http\Controllers\admin;
 use App\Http\Controllers\usercontroller;
 use Carbon\Carbon;
 use DomPDF\DomPDF;
@@ -30,8 +31,18 @@ Route::get('/Register', function () {
     return view('register');
 });
 
+Route::get('/Ahome', function () {
+    return view('Ahome');
+});
+
+Route::get('/adminedituser', function () {
+    return view('adminedituser');
+});
+
 
 Route::post('/Register1',[loginactivity::class,'store']);
+Route::post('/RegisterEdit',[admin::class,'storeedituser']);
+
 
 Route::post('/Login1',[loginactivity::class,'check']);
 
@@ -109,7 +120,7 @@ Route::get('/sview/{id}',[maintanencecontroller::class,'view']);
 Route::get('/printview/{id}',[usercontroller::class,'print']);
 
 Route::get('/mview/{id}',[safety::class,'view']); 
-
+Route::get('/medit/{id}',[admin::class,'edituser']); 
 
 Route::get('/htmlPdf/{id}',[usercontroller::class,'pdfDownload']);
 
@@ -119,5 +130,8 @@ route::get('/maintanencereport',[maintanencecontroller::class,'getreport']);
 
 route::get('/safetyreport',[safety::class,'getreport']);
 
+route::get('/profile',[usercontroller::class,'profile']);
 
+Route::post('/updatepassword',[usercontroller::class,'updatepassword']); 
 
+Route::get('/adminviewusers',[admin::class,'viewuser']); 

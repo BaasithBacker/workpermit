@@ -13,9 +13,9 @@ class loginactivity extends Controller
     {
         $uempno=request('empno');
         $upass=request('password');
+      
         
         $p1=md5($upass);
-
         $this->validate($request,[
             'empno'=>'required',
             'password'=>'required|min:5|max:15'
@@ -25,16 +25,9 @@ class loginactivity extends Controller
 
         $u=register::select('empno')->where('empno','like',"$uempno")->first();
         
-        if($uempno=='admin'&& $upass=='admin')
+        if(!$u)
         {
-           
-            $request->session()->put('sname','admin');
-            echo "<script>alert('Successfully Logined,Welcome');window.location='/AHome';</script>";
-            
-        }
-        else if(!$u)
-        {
-            echo "<script>alert('Something went Wrong,Invalid User');window.location='/';</script>";
+            echo "<script>alert('No Matching EMployee Number Found,Invalid User');window.location='/';</script>";
         }
         else
         {
@@ -45,45 +38,43 @@ class loginactivity extends Controller
         
             if($p->password == $p1)
             {
+               
                 $ut=register::select('usertype')->where('empno','like',"$u->empno")->first();
                 $request->session()->put('utype',$ut);
+                $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
+                $request->session()->put('sid',$i->empno);
                 //echo $ut->usertype;
-                if($ut->usertype == 'staff')
+                if($ut->usertype == 'Staff')
                 {
-                    $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
-                    $i=register::where('empno','like',"$uempno")->first();
-                    $request->session()->put('sid',$i->empno);
-                //    echo "logined";
-                //    echo session('sname')->id;
-                   echo "<script>alert('Successfully Logined,Welcome');window.location='/Uhome';</script>"; 
+                   
+                 echo "<script>alert('Successfully Logined,Welcome');window.location='/Uhome';</script>"; 
                 }
-                else if($ut->usertype=='maintenance')
+                else if($ut->usertype=='Admin')
                 {
-                    $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
-                    $i=register::where('empno','like',"$uempno")->first();
-                    $request->session()->put('sid',$i->empno);
-                    echo "<script>alert('Successfully Logined,Welcome');window.location='/maintenance';</script>"; 
+                    $request->session()->put('sname','admin');
+                     echo "<script>alert('Successfully Logined,Welcome');window.location='/Ahome';</script>";
 
                 
                 }
-                else if($ut->usertype=='security')
+                else if($ut->usertype=='Maintenance Department')
                 {
-                    $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
-                    $i=register::where('empno','like',"$uempno")->first();
-                    $request->session()->put('sid',$i->empno);
+                   echo "<script>alert('Successfully Logined,Welcome');window.location='/maintenance';</script>"; 
+
+                
+                }
+                else if($ut->usertype=='Security Department')
+                {
                     echo "<script>alert('Successfully Logined,Welcome');window.location='/security';</script>"; 
                     
                 
                 }
-                else if($ut->usertype=='safety')
+                else if($ut->usertype=='Safety Department')
                 {
-                    $i=register::select('name','empno')->where('empno','like',"$uempno")->first();
-                    $i=register::where('empno','like',"$uempno")->first();
-                    $request->session()->put('sid',$i->empno);
                     echo "<script>alert('Successfully Logined,Welcome');window.location='/safety';</script>"; 
                     
                 
                 }
+    
              }
              else
             {
@@ -98,6 +89,7 @@ class loginactivity extends Controller
         $uemail = request('contact');
         $udeptname = request('deptname');
         $uempno = request('empno');
+        $role = request('role');
         $upass = request('password');
         $ucpass = request('confirmpassword');
         
@@ -107,6 +99,7 @@ class loginactivity extends Controller
             'contact'=>'required',
             'deptname'=>'required',
             'empno'=>'required',
+            'role'=>'required',
             'password'=>'required|min:5|max:15',
             'confirmpassword'=>'required|min:5|max:15']);
 
@@ -122,7 +115,7 @@ class loginactivity extends Controller
                 $l->deptname=$udeptname;
                 $l->empno=$uempno;
                 $l->password=$p1;
-                $l->usertype="Staff";
+                $l->usertype=$role;
 
                 $l->save();
                 

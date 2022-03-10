@@ -23,10 +23,16 @@
     <link rel="stylesheet" href="../assets/css/slick.css">
     <link rel="stylesheet" href="../assets/css/nice-select.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+ 
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' rel='stylesheet' type='text/css'>
+
 
 
 </head>
@@ -55,6 +61,8 @@
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
+                                    <li><a style="text-decoration:none;" href="/profile">Profile</a></li>                               
+
                                     <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
                                 </ul>
                             </nav>
@@ -79,13 +87,14 @@
                             <nav>                                                
                                 <ul id="navigation">  
                                     <li><a style="text-decoration:none;" href="/Uhome">Home</a></li>
-                                    <li><a style="text-decoration:none;" href="#">My Request</a>    
+                                    <li><a style="text-decoration:none;" href="#">Request's</a>    
                                         <ul class="submenu">
                                         <li><a style="text-decoration:none;" href="/status">Request Status</a></li>
                                             <li><a style="text-decoration:none;" href="/approvedreq">Approved Requests</a></li>
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
+                                    <li><a style="text-decoration:none;" href="/profile">Profile</a></li>                               
                                     <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
                                 </ul>
                             </nav>
@@ -96,7 +105,7 @@
 </div></div></div>
 
 <div class="header-area" id="maintenancemenu" style="display: none;">
-            <div class="main-header header-sticky">
+            <div class="main-header header-sticky" >
                 <div class="container-fluid">
                     <div class="menu-wrapper" >
                         <!-- Logo -->
@@ -118,11 +127,27 @@
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
+                                    <li><a style="text-decoration:none;" href="/profile">Profile</a></li>                               
+
                                     <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header Right -->
+                        <!-- <div class="header-right">
+                            
+                            <ul>
+                                
+                                
+                                {{-- <li>
+                                    <div class="nav-search search-switch">
+                                        <span class="flaticon-search"></span>
+                                    </div>
+                                </li> --}}
+                                {{-- <li> <a href="/sessiondelete"><span class="flaticon-user"></span></a></li> --}}
+                                 
+                            </ul>
+                        </div> -->
                         
                     </div>
 </div></div></div>
@@ -151,6 +176,47 @@
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
+                                    <li><a style="text-decoration:none;" href="/profile">Profile</a></li>                               
+
+                                    <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        
+                    </div>
+</div></div></div>
+
+
+<div class="header-area" id="admin" style="display: none;">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper" >
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/Ahome"><img src="../assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block ml-auto">
+                            <nav>                                                
+                            <ul id="navigation">  
+                                    <li><a style="text-decoration:none;" href="/Ahome">Home</a></li>
+                                    <li><a style="text-decoration:none;" href="#">User's</a>    
+                                        <ul class="submenu">
+                                        <li><a style="text-decoration:none;" href="/Register">Add User's</a></li>
+                                            <li><a style="text-decoration:none;" href="/adminviewusers">View User's</a></li>
+                             
+
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a style="text-decoration:none;" href="#">Reports</a>    
+                                       
+                                            <!-- <li><a href="/AItem2">Add Item</a></li> -->
+                                        
+                                    </li>
+                                    <li><a style="text-decoration:none;" href="/profile">Profile</a></li>                               
+
                                     <li><a style="text-decoration:none;" href="/sessiondelete">Logout</a></li>                               
                                 </ul>
                             </nav>
@@ -163,17 +229,21 @@
 <?php
     $utype = session('utype');
     // dd($utype->usertype);
-    if($utype->usertype == "security"){
+    if($utype->usertype == "Security Department"){
         echo "<script>document.getElementById('securitymenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "staff"){
+    else if($utype->usertype == "Staff"){
         echo "<script>document.getElementById('usermenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "maintenance"){
+    else if($utype->usertype == "Maintenance Department"){
         echo "<script>document.getElementById('maintenancemenu').style.display='block';</script>";
     }
-    else if($utype->usertype == "safety"){
+    else if($utype->usertype == "Safety Department"){
         echo "<script>document.getElementById('safetymenu').style.display='block';</script>";
+    }
+
+    else if($utype->usertype == "Admin"){
+        echo "<script>document.getElementById('admin').style.display='block';</script>";
     }
 ?>
 

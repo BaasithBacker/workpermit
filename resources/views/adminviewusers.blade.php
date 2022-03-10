@@ -2,11 +2,10 @@
 
 
 @section('content')
-
-  <style>
+<style>
       th{
         padding: 1rem 2rem;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.03rem;
         text-transform: uppercase;
         color:#f9fbff;
         font-size: 0.9rem;
@@ -36,17 +35,13 @@
           background-color: #f9fbff;
         }
   </style>
- 
-
-
-
+<body>
 
     <main>
-    <body>
     <div class="container">
 
 <div class="row">
-<center><h3>Approved Request's</h3></center>  
+<center><h3>User's</h3></center>  
 
     <form class="d-flex" action="report" method="POST">
         {{ csrf_field() }}
@@ -56,32 +51,31 @@
 
     <div class="col-lg-12 col-xl-12 col-md-12">
         <br> <br><table id="chacko" class="table">
-       
+          
+
         <tr>
-        <th style="background-color:#4f546c;padding:10px;">Permit Number</th>
-                                        <th style="background-color:#4f546c;padding:10px; width:15%;">Date Of Issued</th>
-                                        <th style="background-color:#4f546c;padding:10px">Security Status</th>
-                                        <th style="background-color:#4f546c;padding:10px">maintanance Status</th>
-                                        <th style="background-color:#4f546c;padding:10px">Safety Status</th>
-                                        <th style="background-color:#4f546c;padding:10px">Print</th>                                 
+        <th style="background-color:#4f546c;">Employee Number</th> 
+                                        <th style="background-color:#4f546c;">Name</th>
+                                        <th style="background-color:#4f546c;">Contact Number</th>
+                                        <th style="background-color:#4f546c;">Department Name</th>
+                                          
+                                        <th style="background-color:#4f546c;">Edit</th>                            
                                     </tr>
 
             @foreach($data as $l)
-                                    
+                   @if($l->usertype=='Admin')
+                   @else                 
             <tr>
-            <td>{{$l->id}}</td>
-                                        <td>{{ Carbon\Carbon::parse($l->date)->format('d-m-Y')}}</td>
-                                        <td>{{$l->securitystatus}}</td>
-                                        <td>{{$l->maintanancestatus}}</td>
-                                        <td>{{$l->safetystatus}}</td>
-                                        
+            <td>{{$l->empno}}</td>
+                                        <td>{{$l->name}}</td>
+                                        <td>{{$l->contact}}</td>
+                                        <td>{{$l->deptname}}</td>                                       
                                         <td>
-                                            <a id="btn" value="print" class="btn btn-danger" href="{{url('printview',$l->id)}}">PRINT</a>
+                                        <a id="btn" value="EDIT" class="btn btn-danger" href="{{url('medit',$l->empno)}}">Edit</a>
                                         </td>
-                                  
                                        
                                     </tr>
-                               
+                               @endif
                                     @endforeach
                                
             </table>
@@ -94,12 +88,11 @@
 
                                   </div>
     
-    </main>
-    </body>
-        
-        
-                    <!-- </table> -->
-        <!--================login_part end =================-->
 
+        
+       
+  
+    </main>
+</body>
 
     @endsection

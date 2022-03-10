@@ -13,6 +13,38 @@ use Dompdf\Dompdf;
 
 class usercontroller extends Controller
 {
+
+    public function updatepassword(Request $request)
+    {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+
+        $pid = request('empno');
+        $newpass=request('NewPassword');
+        $confirmpass=request('ConfirmPassword');
+        
+
+       if($newpass==$confirmpass)
+      {
+        $p1=md5($newpass);
+        register::where('empno',$pid)->update(['password'=>$p1]);
+       }
+       else
+       {
+        echo "<script>alert('Password is not correct');window.location='/profile';</script>"; 
+
+       }
+
+       return redirect('/profile');
+    
+    }
+
+
+    public function profile()
+    {
+        $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
+        return view('profile',compact('LoggedUserInfo'));
+    }
+
     public function statusview($id)
     {
         $LoggedUserInfo=register::where('empno','=', session('sid'))->first();

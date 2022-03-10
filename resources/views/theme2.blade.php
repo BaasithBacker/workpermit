@@ -47,17 +47,16 @@
                                     <li class="hot"><a href="#">Latest</a>
                                         <ul class="submenu">
                                             <li><a href="/shop"> Product list</a></li>
-                                            {{-- <li><a href="/productdetails"> Product Details</a></li> --}}
+                                            <li><a href="/productdetails"> Product Details</a></li> 
                                         </ul>
                                     </li>
                              
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
                                             <li><a href="/Login">Login</a></li>
-                                            {{-- <li><a href="/cart">Cart</a></li> --}}
-                                           
-                                            {{-- <li><a href="/confirmation">Confirmation</a></li>
-                                            <li><a href="/checkout">Product Checkout</a></li> --}}
+                                          
+                                        
+                                          
                                         </ul>
                                     </li>
                                     <li><a href="/Contact">Contact</a></li>

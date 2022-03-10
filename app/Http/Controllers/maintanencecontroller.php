@@ -30,7 +30,7 @@ class maintanencecontroller extends Controller
     public function showreq()
     {
 
-        $data=form::where('maintanancestatus','like','waiting')->where('securitystatus','like','Approved%')->get();
+        $data=form::where('maintanancestatus','like','waiting')->where('securitystatus','like','Approved%')->Paginate(10);
 
         return view('maintenance',compact('data'));
     }

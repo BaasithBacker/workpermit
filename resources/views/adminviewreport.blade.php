@@ -52,16 +52,17 @@ table {
         <!-- Header End -->
     </header>
     <main>
-  
+      
+        
         <section class="login_part">
            
                     <div class="container mt-4 mb-4">
                         <div class="row align-items-center">
                             <div class="col-12 col-lg-12">
                                <center><h3>Permit To Work Request</h3></center>
-                                <!-- <form class="row contact_form" action="/Uhome1" method="post" novalidate="novalidate">
-                                {{csrf_field()}} -->
-                                    <table class="table table-bordered table-justify">
+                                <form  class="row contact_form" action="" method="post" novalidate="novalidate">
+                              
+                                    <table id="example" class="table table-bordered table-justify">
                                         <tbody>
                                         <tr>
                                             <td>
@@ -176,8 +177,8 @@ table {
                                             <div class="row align-items-center">
                                             <label class="col-md-12 form-group row" for=""><b>Applicant Details</b></label>
                                                     <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
-                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input readonly type="text" style="width:70%" class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"
+                                                    <label for="cname"><b>Name of the Contractor/Agency:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:80%" class="form-control" id="cname" name="cname" value="{{$data->agencyname}}"
                                                               placeholder="">
                                                         <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                     </div>
@@ -226,12 +227,12 @@ table {
                                                 <label class="col-md-12 form-group row" for=""><b>Job Description</b></label>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                              <label for="no"><b>Exact Location of the job:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                               <input readonly class="form-control" style="width:70%" id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea>
+                                                               <input readonly class="form-control" style="width:80%" id="eloc" name="eloc" value="{{$data->joblocation}}" placeholder=""></textarea>
                                                                 <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                 </div>
                                                 <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
                                                              <label for="no"><b>Work to be carried out in detail:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                             <input readonly class="form-control" style="width:70%" id="desc" name="desc" value="{{$data->workdetails}}"
+                                                             <input readonly class="form-control" style="width:80%" id="desc" name="desc" value="{{$data->workdetails}}"
                                                              placeholder=""></textarea>
                                                              <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                 </div>
@@ -267,47 +268,230 @@ table {
 
                                                 </td>
                                             </tr>
+                                            
+
+                                             <tr>
+                                            <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <input type="text" name="pid" value="{{$data->id}}" hidden="true">
+                                                <label  for="Safety Precautions"><b>Safety Precautions</b></label>
+                                                </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Fire Extinguisher:</b></label>
+                                                          <div class="col-md-12 form-group">
+                                                              <label class="px-3"><b>{{$data->FireExtinguisher}}</b></label>
+                                                             
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Access to fire Hydrant:</b></label>
+                                                    <div class="col-md-12 form-group ">
+                                                     <label class="px-3" ><b>{{$data->AccesstofireHydrant}}</b></label>
+                                
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                                
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Signage:</b></label>
+                                                          <div class="col-md-12 form-group">
+                                                              <label class="px-3"><b>{{$data->Signage}}</b></label>
+                                                          </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Appropriate PPE:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                         <label class="px-3"><b>{{$data->AppropriatePPE}}</b></label>
+
+                                                     </div>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                <div class="row align-items-center">
+                                                
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Guardrails/Barricades:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Guardrails}}</b></label>
+                                                      
+
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Machine Safety:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->MachineSafety}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                              
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Adequate ventilation:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Adequateventilation}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Adequate Lighting:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->AdequateLighting}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                               
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Electrical Safety:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->ElectricalSafety}}</b></label>
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->FallProtection}}</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+
                                             <tr>
                                                 <td>
                                                 <div class="row align-items-center">
-                                                <div class="col-12 col-lg-12">
-                                              <center><a style="width:50%;height:50px" id="btn" value="Approve" class="btn btn-success" href="/maintanencereport">Back</a></center>
+                                            
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Isolation:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><b>{{$data->Isolation}}</b></label>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                            
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                        <label for="isolation1"><b>Isolation done by:</b></label>&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:90%" class="form-control" id="isolation1" name="isolation1" value="{{$data->isolation1}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                    </div>
+                                        </div>
+                                                </td>
+                                           </tr>
+
+
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label><b>Training/Toolbox Talk Details</b></label>
+                                                
+                                                    <label class="px-4"><b>{{$data->trainingtalk}} </b></label>
+                                                   
+                                                    </div>
+                                                </div>
+                                            
+                                                </td>
+                                           </tr>
+
+                                           <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Precuations to be taken prior to commencement and during work:</b></label>&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:60%" class="form-control" id="prec" name="prec" value="{{$data->precuation}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                 </div>
                                                 </div>
                                                 </td>
-                                            </tr>
+                                           </tr>
+                                           <tr>
+                                               <td>
+                                           <div class="row align-items-center">
+                                           <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">   
+                                                <label class="pl-6"><b>Remarks if any:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        <input readonly type="text" style="width:90%" class="form-control " id="remarks" name="remarks" value="{{$data->remarks}}" placeholder="">
+                                                        <span style="color:red" >@error('name') {{$message}} @enderror</span>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr>
+
+                                           <!-- <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Performing authority acceptance(To be completed by contractor)</b></label>&nbsp&nbsp&nbsp
+                                                </div>
+                                                <div class="col-12 col-lg-12 form-group d-flex flex-row align-items-center">
+
+                                                <label class="pl-6"><b>I certify that I have read and understand this permit and the work will be carried out in accordance with requirements.</b></label>      
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                    <label for=""><b>Name</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label for=""><b>Signature</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label for=""><b>Date</b></label>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr> -->
+
+                                           <!-- <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Security Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->securitystatus}}</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Maintenance Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->safetystatus}}</b></label>
+                                                </div>
+                                                <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
+                                                <label class="pl-6"><b>Safety Department</b></label>&nbsp&nbsp&nbsp
+                                                <label for=""><b>{{$data->maintanancestatus}}</b></label>
+                                                </div>
+                                                </div>
+                                                </td>
+                                           </tr> -->
+                                          
+                                           
+                                           
+                                            
+
                                         </tbody
                                     </table>
+                                    
                                 </form>
+                                <tr>
+                                                <td>
+                                                <div class="row align-items-center">
+                                                <div class="col-12 col-lg-12 ">
+                                                    <center>
+                                                <a style="text-align:center;width:50%;"  value="back" class="btn btn-success" href="/adminreportsview" >Back</a> </div>
+                                                    
+                                                </center>
+                                                </td>
+                                            </tr>
                             </div>
                         </div>
-                    </div>
-
-
-                                            
-                                 
-                                        
-                                   
-
-                                
-                                    
-
-                                   
-                                    
-                                   
-
-                                       
-
-                                
-
-
-                                       
-                                   
-
-
-                                   
-                                    
-                                       
+                    </div>             
                                     </div>
                                 
                             </div>
@@ -317,8 +501,9 @@ table {
             </div>
           
         </section>
-        </table>
+        
+       
         <!--================login_part end =================-->
     </main>
-
+  
     @endsection

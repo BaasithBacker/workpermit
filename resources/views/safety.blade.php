@@ -61,7 +61,8 @@
                                         <th style="background-color:#4f546c;">Employee Number</th>
                                         <th style="background-color:#4f546c;">Contact Number</th>
                                         <th style="background-color:#4f546c;">SecurityStatus</th>
-                                        <th style="background-color:#4f546c;">MaintenanceStatus</th>                     
+                                        <th style="background-color:#4f546c;">MaintenanceStatus</th>     
+                                        <th style="background-color:#4f546c;">SafetyStatus</th>                 
                                         <th style="background-color:#4f546c;">View</th>
                                     </tr>
 

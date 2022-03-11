@@ -119,7 +119,7 @@ class loginactivity extends Controller
 
                 $l->save();
                 
-                echo "<script>alert('Signup Successfull');window.location='/';</script>"; 
+                echo "<script>alert('Added Successfull');window.location='/Register';</script>"; 
                 }
                  else
                  {

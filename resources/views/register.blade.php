@@ -1,4 +1,4 @@
-@extends('admintheme')
+@extends('theme3')
 
 
 @section('content')

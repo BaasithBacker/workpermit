@@ -53,9 +53,9 @@
 <div class="row">
 <center><h3>Maintenance Report's</h3></center>  
 
-    <form class="d-flex" action="report" method="POST">
+    <form class="d-flex" action="/maintanencereport" method="POST">
         {{ csrf_field() }}
-      </form>
+      
    
       <div class="col-lg-2 col-md-2 col-sm-2">
                                 <input type="date" name="date1" class="form-control">
@@ -66,9 +66,15 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2">
                                 <button class="btn btn-danger">Search</button>
                                 </div>    
-                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="text" name="searchname"  placeholder="Search here" class="form-control">
                                 </div>
-
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <button class="btn btn-danger">Search</button>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                </div> 
+                                </form>
 
     <div class="col-lg-12 col-xl-12 col-md-12">
         <br> <br><table id="chacko" class="table table-responsive">
@@ -83,7 +89,8 @@
                                         <th style="background-color:#4f546c;padding:10px;">Employee Number</th>
                                         <th style="background-color:#4f546c;padding:10px;">Contact Number</th>
                                         <th style="background-color:#4f546c;padding:10px;">SecurityStatus</th>
-                                        <th style="background-color:#4f546c;padding:10px;">Maintanence Status</th>                       
+                                         <th style="background-color:#4f546c;padding:10px;">Maintanence Status</th>
+                                         <th style="background-color:#4f546c;padding:10px;">View</th>                       
                              
                                     </tr>
 

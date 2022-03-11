@@ -10,6 +10,35 @@ use App\Models\register;
 
 class maintanencecontroller extends Controller
 {
+    public function searchreport()
+    {
+        $name=request('searchname');
+        
+        if(!empty($name))
+        {
+        $data=form::where('name','like','%'.$name.'%')
+        ->orwhere('empno','like','%'.$name.'%')
+        ->orwhere('agencyname','like','%'.$name.'%')
+        ->orwhere('joblocation','like','%'.$name.'%')->Paginate(10);
+        }
+        else
+        {
+            $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->Paginate(10);
+
+        }
+     
+        return view('maintanencereport',compact('data'));
+    }
+
+
+
+    public function viewreport()
+    {
+        
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->Paginate(10);
+        
+        return view('maintanencereport',compact('data'));
+    }
 
     public function getreport()
     {

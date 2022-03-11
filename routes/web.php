@@ -116,6 +116,13 @@ Route::get('/rview/{id}',[security::class,'rview']);
 Route::get('/rview/{id}',[maintanencecontroller::class,'rview']); 
 Route::get('/rview/{id}',[safety::class,'rview']); 
 
+Route::post('/safetyreport',[safety::class,'getreport']); 
+Route::post('/safetyreport',[safety::class,'searchreport']); 
+
+Route::get('/securityreport',[security::class,'viewreport']); 
+
+Route::get('/arview/{id}',[admin::class,'adminreportview']); 
+
 Route::get('/sview/{id}',[maintanencecontroller::class,'view']); 
 Route::get('/printview/{id}',[usercontroller::class,'print']);
 
@@ -124,11 +131,21 @@ Route::get('/medit/{id}',[admin::class,'edituser']);
 
 Route::get('/htmlPdf/{id}',[usercontroller::class,'pdfDownload']);
 
-route::get('/securityreport',[security::class,'getreport']);
+route::Post('/securityreport',[security::class,'getreport']);
+route::Post('/securityreport',[security::class,'searchreport']);
 
-route::get('/maintanencereport',[maintanencecontroller::class,'getreport']);
+route::get('/maintanencereport',[maintanencecontroller::class,'viewreport']);
 
-route::get('/safetyreport',[safety::class,'getreport']);
+route::post('/maintanencereport',[maintanencecontroller::class,'getreport']);
+route::post('/maintanencereport',[maintanencecontroller::class,'searchreport']);
+
+
+route::get('/safetyreport',[safety::class,'viewreport']);
+
+route::post('/adminreportsview',[admin::class,'getreport']);
+route::post('/adminreportsview',[admin::class,'searchreport']);
+
+route::get('/adminreportsview',[admin::class,'viewreport']);
 
 route::get('/profile',[usercontroller::class,'profile']);
 

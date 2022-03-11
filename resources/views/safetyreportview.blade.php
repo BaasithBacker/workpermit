@@ -2,6 +2,43 @@
 
 
 @section('content')
+<style>
+    
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Mukta, sans-serif;
+ 
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.9rem;
+
+}
+table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px #e1e5ee;
+  background-color: white;
+  text-align: left;
+  overflow: hidden;}
+
+  td {
+    padding: 1rem 2rem;
+  }
+  thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+  }
+  tbody {
+    box-shadow: 0 5px 10px #e1e5ee;
+  }
+ 
+
+
+</style>
 <body>
     <header>
         

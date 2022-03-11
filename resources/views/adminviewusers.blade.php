@@ -28,7 +28,6 @@
         }
         body {
           font-family: Mukta, sans-serif;
-
           justify-content: center;
           align-items: center;
           color: #4f546c;

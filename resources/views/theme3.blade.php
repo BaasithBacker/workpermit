@@ -210,7 +210,7 @@
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         </ul>
                                     </li>
-                                    <li><a style="text-decoration:none;" href="#">Reports</a>    
+                                    <li><a style="text-decoration:none;" href="/adminreportsview">Reports</a>    
                                        
                                             <!-- <li><a href="/AItem2">Add Item</a></li> -->
                                         

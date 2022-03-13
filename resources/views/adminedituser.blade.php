@@ -84,12 +84,7 @@
                                         <input type="text" class="form-control" id="deptname" name="deptname" value="{{$data->deptname}}"
                                             placeholder="Department Name">
                                             <span style="color:red" >@error('deptname') {{$message}} @enderror</span>
-                                    </div>
-                                    <div class="col-md-12 form-group p_star">
-                                        <input type="text" class="form-control" id="empno" name="empno" value="{{$data->empno}}"
-                                            placeholder="Employee Number">
-                                            <span style="color:red" >@error('empno') {{$message}} @enderror</span>
-                                    </div>
+                                    </div>                                 
                                   
                                     <div class="col-md-12 form-group">
                                        

@@ -13,7 +13,7 @@ class security extends Controller
     public function viewreport()
     {
 
-        $data=form::select('*')->where('securitystatus','like','Approved%')->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->latest()->Paginate(10);
         
         return view('securityreport',compact('data'));
     }
@@ -38,11 +38,11 @@ class security extends Controller
         $data=form::where('name','like','%'.$name.'%')
         ->orwhere('empno','like','%'.$name.'%')
         ->orwhere('agencyname','like','%'.$name.'%')
-        ->orwhere('joblocation','like','%'.$name.'%')->Paginate(10);
+        ->orwhere('joblocation','like','%'.$name.'%')->latest()->Paginate(10);
         }
         else
         {
-            $data=form::select('*')->where('securitystatus','like','Approved%')->Paginate(10);
+            $data=form::select('*')->where('securitystatus','like','Approved%')->latest()->Paginate(10);
 
         }
      
@@ -57,7 +57,7 @@ class security extends Controller
  
     public function showreq()
     {
-        $data=form::where('securitystatus','=','waiting')->Paginate(10);
+        $data=form::where('securitystatus','=','waiting')->latest()->Paginate(10);
 
         return view('security',compact('data'));
     }

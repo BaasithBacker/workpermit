@@ -88,7 +88,7 @@
                                     <div class="col-md-12 form-group">
                                        
                                         <button type="submit" value="register" style="width:500px;" class="btn btn-danger btn-lg">
-                                            Register
+                                            Add
                                         </button>
                                        
                                     </div>

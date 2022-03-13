@@ -19,11 +19,11 @@ class maintanencecontroller extends Controller
         $data=form::where('name','like','%'.$name.'%')
         ->orwhere('empno','like','%'.$name.'%')
         ->orwhere('agencyname','like','%'.$name.'%')
-        ->orwhere('joblocation','like','%'.$name.'%')->Paginate(10);
+        ->orwhere('joblocation','like','%'.$name.'%')->latest()->Paginate(10);
         }
         else
         {
-            $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->Paginate(10);
+            $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->latest()->Paginate(10);
 
         }
      
@@ -35,7 +35,7 @@ class maintanencecontroller extends Controller
     public function viewreport()
     {
         
-        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->latest()->Paginate(10);
         
         return view('maintanencereport',compact('data'));
     }
@@ -45,7 +45,7 @@ class maintanencecontroller extends Controller
         $getdate1=request('date1');
         $getdate2=request('date2');
           
-        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->whereBetween('date', [$getdate1, $getdate2])->latest()->Paginate(10);
         
         return view('maintanencereport',compact('data'));
     }
@@ -59,7 +59,7 @@ class maintanencecontroller extends Controller
     public function showreq()
     {
 
-        $data=form::where('maintanancestatus','like','waiting')->where('securitystatus','like','Approved%')->Paginate(10);
+        $data=form::where('maintanancestatus','like','waiting')->where('securitystatus','like','Approved%')->latest()->Paginate(10);
 
         return view('maintenance',compact('data'));
     }
@@ -116,7 +116,8 @@ class maintanencecontroller extends Controller
         $uAdequateventilation = request('safety7');
         $uAdequateLighting = request('safety8');
         $uElectricalSafety = request('safety9');
-        $uFallProtection = request('safety10');
+        $ladder = request('safety10');
+        $uFallProtection = request('safety11');
         $uIsolation = request('isolation');
         $uisolation1 = request('isolation1');
         $utool = request('tools');
@@ -157,10 +158,11 @@ class maintanencecontroller extends Controller
             'safety8'=>'required',
             'safety9'=>'required',
             'safety10'=>'required',
+            'safety11'=>'required',
             'isolation'=>'required',
             'tools'=>'required',
             'prec'=>'required',
-            'remarks'=>'required',  
+             
         ]); 
 
         
@@ -180,6 +182,7 @@ class maintanencecontroller extends Controller
                 $l->Adequateventilation=$uAdequateventilation;
                 $l->AdequateLighting=$uAdequateLighting;
                 $l->ElectricalSafety=$uElectricalSafety;
+                $l->ladder=$ladder;
                 $l->FallProtection=$uFallProtection;
                 $l->Isolation=$uIsolation;
                 $l->isolation1=$uisolation1;

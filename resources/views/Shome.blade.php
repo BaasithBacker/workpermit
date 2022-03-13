@@ -2,43 +2,7 @@
 
 
 @section('content')
-<style>
-    
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: Mukta, sans-serif;
- 
-  justify-content: center;
-  align-items: center;
 
-  font-size: 0.8rem;
-
-}
-table {
-  border-collapse: collapse;
-  box-shadow: 0 5px 10px #e1e5ee;
-  background-color: white;
-  text-align: left;
-  overflow: hidden;}
-
-  td {
-    padding: 1rem 2rem;
-  }
-  thead {
-    box-shadow: 0 5px 10px #e1e5ee;
-  }
-  tbody {
-    box-shadow: 0 5px 10px #e1e5ee;
-  }
- 
-
-
-</style>
 <body>
     <head>
         <script>
@@ -49,15 +13,7 @@ table {
             }
         </script>
     </head>
-    <header>
-        
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-          
-        <!-- Header End -->
-    </header>
+  
     <main>
   
         <section class="login_part">
@@ -165,10 +121,18 @@ table {
                                                     </div>
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
-                                                    <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Ladder/Scaffolding:</b></label>
                                                     <div class="col-md-12 form-group">
                                                         <label class="px-3"><input type="radio" name="safety10" value="yes"><b>Yes</b></label>
                                                         <label class="pl-3"><input type="radio" name="safety10" value="N/A"><b>N/A</b></label>
+
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
+                                                    <div class="col-md-12 form-group">
+                                                        <label class="px-3"><input type="radio" name="safety11" value="yes"><b>Yes</b></label>
+                                                        <label class="pl-3"><input type="radio" name="safety11" value="N/A"><b>N/A</b></label>
 
                                                     </div>
                                                     </div>
@@ -265,6 +229,7 @@ table {
         
         <!--================login_part end =================-->
     </main>
+</body>
 
 
     @endsection

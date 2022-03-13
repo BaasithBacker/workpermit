@@ -23,6 +23,7 @@ use DomPDF\DomPDF;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('login');
 });
@@ -40,15 +41,14 @@ Route::get('/adminedituser', function () {
 });
 
 
-Route::post('/Register1',[loginactivity::class,'store']);
-Route::post('/RegisterEdit',[admin::class,'storeedituser']);
+Route::post('/Register1', [loginactivity::class, 'store']);
+Route::post('/RegisterEdit', [admin::class, 'storeedituser']);
 
 
-Route::post('/Login1',[loginactivity::class,'check']);
+Route::post('/Login1', [loginactivity::class, 'check']);
 
-Route::get('/sessiondelete',function(){
-    if(session()->has('sid'))
-    {
+Route::get('/sessiondelete', function () {
+    if (session()->has('sid')) {
         session()->pull('sid');
     }
     return view('login');
@@ -75,80 +75,91 @@ Route::get('/securityform', function () {
 
 
 
-Route::post('/Uhome1',[usercontroller::class,'store']);
-Route::post('/securityform1',[security::class,'store']);
+Route::post('/Uhome1', [usercontroller::class, 'store']);
+Route::post('/securityform1', [security::class, 'store']);
 
-Route::post('/Shome1',[maintanencecontroller::class,'store']);
+Route::post('/Shome1', [maintanencecontroller::class, 'store']);
 
-Route::get('/security',[security::class,'showreq']);
+Route::get('/security', [security::class, 'showreq']);
 
-Route::get('/Uhome',[usercontroller::class,'viewuser']);
-Route::get('/securityform',[security::class,'viewuser']);
+Route::get('/Uhome', [usercontroller::class, 'viewuser']);
+Route::get('/securityform', [security::class, 'viewuser']);
 
-Route::get('/approvedreq',[usercontroller::class,'showreqq']);
-Route::get('/securityapproved',[security::class,'showreqq']);
 
-Route::get('/status',[usercontroller::class,'showreqqq']);
-Route::get('/securitystatus',[security::class,'showreqqq']);
+
+Route::get('/approvedreq', [usercontroller::class, 'showreqq']);
+
+Route::post('/approvedreq', [usercontroller::class, 'getapprovedrequest']);
+Route::post('/approvedreq1', [usercontroller::class, 'searchapprovedrequest']);
+
+Route::get('/securityapproved', [security::class, 'showreqq']);
+
+Route::Post('/status', [usercontroller::class, 'getreports']);
+Route::Post('/status1', [usercontroller::class, 'searchreport']);
+
+
+Route::get('/status', [usercontroller::class, 'showreqqq']);
+Route::get('/securitystatus', [security::class, 'showreqqq']);
 
 //Route::get('/safety',[safety::class,'showreq']);
 
-Route::get('/maintenance',[maintanencecontroller::class,'showreq']);
+Route::get('/maintenance', [maintanencecontroller::class, 'showreq']);
 
 
-Route::get('/safety',[safety::class,'showreq']);
-Route::get('/Shome/{id}',[maintanencecontroller::class,'showreq1']);
+Route::get('/safety', [safety::class, 'showreq']);
+Route::get('/Shome/{id}', [maintanencecontroller::class, 'showreq1']);
 
-Route::get('/approved/{id}',[security::class,'approved']); 
-Route::post('/rejectedreq',[security::class,'rejected']); 
-Route::post('/rejectedreqq',[maintanencecontroller::class,'rejected']); 
-Route::post('/rejectedreqqq',[safety::class,'rejected']); 
+Route::get('/approved/{id}', [security::class, 'approved']);
+Route::post('/rejectedreq', [security::class, 'rejected']);
+Route::post('/rejectedreqq', [maintanencecontroller::class, 'rejected']);
+Route::post('/rejectedreqqq', [safety::class, 'rejected']);
 
-Route::get('/sapproved/{id}',[safety::class,'sapproved']); 
+Route::get('/sapproved/{id}', [safety::class, 'sapproved']);
 
 // Route::get('/Shome/{id}',[maintanencecontroller::class,'store']); 
 
-Route::get('/mrejected/{id}',[maintanencecontroller::class,'mrejected']);
+Route::get('/mrejected/{id}', [maintanencecontroller::class, 'mrejected']);
 
-Route::get('/view/{id}',[security::class,'view']); 
-Route::get('/statusview/{id}',[usercontroller::class,'statusview']); 
-Route::get('/rview/{id}',[security::class,'rview']); 
-Route::get('/rview/{id}',[maintanencecontroller::class,'rview']); 
-Route::get('/rview/{id}',[safety::class,'rview']); 
+Route::get('/view/{id}', [security::class, 'view']);
+Route::get('/statusview/{id}', [usercontroller::class, 'statusview']);
+Route::get('/rview/{id}', [security::class, 'rview']);
+Route::get('/rview/{id}', [maintanencecontroller::class, 'rview']);
+Route::get('/rview/{id}', [safety::class, 'rview']);
 
-Route::post('/safetyreport',[safety::class,'getreport']); 
-Route::post('/safetyreport',[safety::class,'searchreport']); 
+Route::post('/safetyreport', [safety::class, 'getreport']);
+Route::post('/safetyreport1', [safety::class, 'searchreport']);
 
-Route::get('/securityreport',[security::class,'viewreport']); 
+Route::get('/securityreport', [security::class, 'viewreport']);
 
-Route::get('/arview/{id}',[admin::class,'adminreportview']); 
+Route::get('/arview/{id}', [admin::class, 'adminreportview']);
 
-Route::get('/sview/{id}',[maintanencecontroller::class,'view']); 
-Route::get('/printview/{id}',[usercontroller::class,'print']);
+Route::get('/sview/{id}', [maintanencecontroller::class, 'view']);
+Route::get('/printview/{id}', [usercontroller::class, 'print']);
 
-Route::get('/mview/{id}',[safety::class,'view']); 
-Route::get('/medit/{id}',[admin::class,'edituser']); 
+Route::get('/mview/{id}', [safety::class, 'view']);
+Route::get('/medit/{id}', [admin::class, 'edituser']);
 
-Route::get('/htmlPdf/{id}',[usercontroller::class,'pdfDownload']);
+Route::get('/htmlPdf/{id}', [usercontroller::class, 'pdfDownload']);
 
-route::Post('/securityreport',[security::class,'getreport']);
-route::Post('/securityreport',[security::class,'searchreport']);
+route::Post('/securityreport', [security::class, 'getreport']);
+route::Post('/securityreport1', [security::class, 'searchreport']);
 
-route::get('/maintanencereport',[maintanencecontroller::class,'viewreport']);
+route::get('/maintanencereport', [maintanencecontroller::class, 'viewreport']);
 
-route::post('/maintanencereport',[maintanencecontroller::class,'getreport']);
-route::post('/maintanencereport',[maintanencecontroller::class,'searchreport']);
+route::post('/maintanencereport', [maintanencecontroller::class, 'getreport']);
+route::post('/maintanencereport1', [maintanencecontroller::class, 'searchreport']);
 
+route::get('/safetyreport', [safety::class, 'viewreport']);
 
-route::get('/safetyreport',[safety::class,'viewreport']);
+route::post('/adminreportsview', [admin::class, 'getreport']);
+route::post('/adminreportsview1', [admin::class, 'searchreport']);
 
-route::post('/adminreportsview',[admin::class,'getreport']);
-route::post('/adminreportsview',[admin::class,'searchreport']);
+route::get('/adminreportsview', [admin::class, 'viewreport']);
 
-route::get('/adminreportsview',[admin::class,'viewreport']);
+route::get('/profile', [usercontroller::class, 'profile']);
 
-route::get('/profile',[usercontroller::class,'profile']);
+Route::post('/updatepassword', [usercontroller::class, 'updatepassword']);
 
-Route::post('/updatepassword',[usercontroller::class,'updatepassword']); 
+Route::Post('/adminviewusers', [admin::class, 'searchuser']);
 
-Route::get('/adminviewusers',[admin::class,'viewuser']); 
+Route::get('/adminviewusers', [admin::class, 'viewuser']);

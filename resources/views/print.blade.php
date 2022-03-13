@@ -54,7 +54,7 @@
                                                     <div class="col-12 col-lg-12 form-group d-flex flex row align-items-center">
                                                         <label class="col-lg-2 pr-0" for="Electrical"><b>Types of Jobs:</b></label>
                                                         <div class="col-lg-10 pl-0">
-                                                            <label class="pr-3" for="">{{$data->jobtypes}}</label>
+                                                           &nbsp; <label class="pr-3" for="">{{$data->jobtypes}}</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -306,7 +306,14 @@
                                                     
                                                         <label style="margin-left:2%;">{{$data->ElectricalSafety}}</label>
                                                    
+                                                    </div>  
+                                                    <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
+                                                    <label class="col-6 col-lg-6 pl-0"><b>Ladder/Scaffolding:</b></label>
+                                                    
+                                                    <label style="margin-left:2%;">{{$data->ladder}}</label>
+
                                                     </div>
+                                                    
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                     <label class="col-6 col-lg-6 pl-0"><b>Fall Protection/Safety Belt:</b></label>
                                                    
@@ -392,12 +399,14 @@
                                                 </div>
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                     <label for=""><b>Name</b></label>
+                                                    <label style="margin-left: 2%;" for="">{{$data->supervisorname}}</label>
                                                 </div>
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                 <label for=""><b>Signature</b></label>
                                                 </div>
                                                 <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                 <label for=""><b>Date</b></label>
+                                                <label  style="margin-left: 2%;" for="">{{Carbon\Carbon::parse($data->date)->format('d-m-Y')}}</label>
                                                 </div>
                                                 </div>
                                                 </td>

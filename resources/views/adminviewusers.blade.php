@@ -42,8 +42,22 @@
 <div class="row">
 <center><h3>User's</h3></center>  
 
-    <form class="d-flex" action="report" method="POST">
+    <form class="d-flex" action="/adminviewusers" method="POST">
         {{ csrf_field() }}
+        
+                                 
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <input type="text" name="searchname"  placeholder="Search here" class="form-control">
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <button class="btn btn-danger">Search</button>
+                                <a style="font-size:24px;" href="/adminviewusers"><i class="fa fa-refresh"></i></a>
+
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                </div> 
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                </div>
       </form>
       
 
@@ -57,7 +71,7 @@
                                         <th style="background-color:#4f546c;">Name</th>
                                         <th style="background-color:#4f546c;">Contact Number</th>
                                         <th style="background-color:#4f546c;">Department Name</th>
-                                          
+                                        <th style="background-color:#4f546c;">Designation</th>
                                         <th style="background-color:#4f546c;">Edit</th>                            
                                     </tr>
 
@@ -68,9 +82,10 @@
             <td>{{$l->empno}}</td>
                                         <td>{{$l->name}}</td>
                                         <td>{{$l->contact}}</td>
-                                        <td>{{$l->deptname}}</td>                                       
+                                        <td>{{$l->deptname}}</td>
+                                        <td>{{$l->usertype}}</td>                                                                              
                                         <td>
-                                        <a id="btn" value="EDIT" class="btn btn-danger" href="{{url('medit',$l->empno)}}">Edit</a>
+                                        <a  href="{{url('medit',$l->empno)}}"><i style="color:black" class="fas fa-pencil-alt"></i></a>
                                         </td>
                                        
                                     </tr>

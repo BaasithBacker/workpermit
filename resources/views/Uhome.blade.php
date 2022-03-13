@@ -73,7 +73,7 @@ table {
                                                     </div>
                                                     <div class="col-6 col-lg-6 form-group d-flex flex-row align-items-center">
                                                         <label for="location"><b>Location:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="text"  class="form-control" id="location" name="location" value="" placeholder="">
+                                                        <input readonly type="text"  class="form-control" id="location" name="location" value="Aluva" placeholder="">
                                                         <span style="color:red" >@error('desc') {{$message}} @enderror</span>
                                                     </div>
                                                 </div>
@@ -85,11 +85,14 @@ table {
                                                     <div class="col-12 col-lg-12 form-group d-flex flex row align-items-center">
                                                         <label class="col-lg-2 pr-0" for="Electrical"><b>Types of Jobs:</b></label>
                                                         <div class="col-lg-10 pl-0">
-                                                            <label class="pr-3"><input type="checkbox" name="Jobtype[]" value="Electrical"><b>Electrical</b></label>
-                                                            <label class="px-3"><input type="checkbox" name="Jobtype[]" value="Hotwork"><b>Hotwork</b></label>
-                                                            <label class="px-3"><input type="checkbox" name="Jobtype[]" value="Work At Height"><b>Work at height</b></label>
-                                                            <label class="px-3"><input type="checkbox" name="Jobtype[]" value="Confined Space"><b>Confined space</b></label>
-                                                            <label class="px-3"><input type="checkbox" name="Jobtype[]" value="General"><b>General</b></label>
+                                                            <label class="pr-2"><input type="checkbox" name="Jobtype[]" value="Electrical"><b>Electrical</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="Hotwork"><b>Hotwork</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="Work At Height"><b>Work at height</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="Confined Space"><b>Confined space</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="Painting"><b>Painting</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="AC"><b>AC</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="Civil"><b>Civil</b></label>
+                                                            <label class="px-2"><input type="checkbox" name="Jobtype[]" value="General"><b>General</b></label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -132,7 +135,7 @@ table {
                                         <tr>
                                         <td>
                                             <div class="row align-items-center">
-                                            <label class="col-md-12 form-group row" for="Workpermitvalidity"><b>Work permit validity</b></label>
+                                            <label class="col-md-12 form-group row" for="Workpermitvalidity"><b>Work permit validity  <center>Work permit validity is only for 15days,Afterwards reapply</center></b></label>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
@@ -143,7 +146,7 @@ table {
                                                     </div>
                                                     <div class="col-4 col-lg-4 form-group d-flex flex-row align-items-center">
                                                         <label for="Date"><b>To:</b></label>&nbsp&nbsp&nbsp&nbsp
-                                                        <input type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value=""
+                                                        <input readonly type="date" class="form-control" style="width:60%" id="tdate" name="tdate" value=""
                                                         placeholder="Date"></Label> 
                                                         <span style="color:red" >@error('name') {{$message}} @enderror</span>
                                                     </div>

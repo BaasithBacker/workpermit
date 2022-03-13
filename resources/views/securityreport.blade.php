@@ -52,29 +52,37 @@
 
 <div class="row">
 <center><h3>Security Report's</h3></center>  
-
-    <form class="d-flex" action="/securityreport" method="POST">
+<div class="row">
+  <form class="col-6 d-flex" action="/securityreport" method="POST">
         {{ csrf_field() }}
       
-     
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+   
+      <div class="col-lg-4 col-md-4 col-sm-4">
                                 <input type="date" name="date1" class="form-control">
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <input type="date" name="date2" class="form-control">
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <button class="btn btn-danger">Search</button>
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                </div>    
+    </form>
+    <form class="col-6 d-flex" action="/securityreport1" method="POST">
+        {{ csrf_field() }}
+
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <input type="text" name="searchname"  placeholder="Search here" class="form-control">
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 <button class="btn btn-danger">Search</button>
+                                <a style="font-size:24px; margin-left: 4%;" href="/safetyreport"><i class="fa fa-refresh"></i></a>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                 </div> 
-                                </form>  
+                                </form>
+
+  </div>
+      
                                
 
 
@@ -108,7 +116,7 @@
                                         <td>{{$l->contactno}}</td>
                                         <td>{{$l->securitystatus}}</td>
                                         <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('rview',$l->id)}}">View</a>
+                                        <a href="{{url('rview',$l->id)}}"><i style="color:black" class="fa fa-eye"></i></a>
                                         </td>  
                                   
                                        

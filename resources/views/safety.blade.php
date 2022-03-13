@@ -83,8 +83,7 @@
                                        
                                         
                                         <td>
-
-                                        <a id="btn" value="view" class="btn btn-primary" href="{{url('mview',$l->id)}}">View</a>
+                                        <a href="{{url('mview',$l->id)}}"><i style="color:black" class="fa fa-eye"></i></a>
                                         </td>
                                     </tr>
                                

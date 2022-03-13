@@ -78,7 +78,7 @@
                                         <td>{{$l->contactno}}</td>
                                         <td>{{$l->securitystatus}}</td>
                                         <td>
-                                            <a id="btn" value="view" class="btn btn-primary" href="{{url('view',$l->id)}}">View</a>
+                                        <a href="{{url('view',$l->id)}}"><i style="color:black" class="fa fa-eye"></i></a>
                                         </td>
                                   
                                        

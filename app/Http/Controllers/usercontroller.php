@@ -14,6 +14,67 @@ use Dompdf\Dompdf;
 class usercontroller extends Controller
 {
 
+    public function searchapprovedrequest()
+    {
+        $name=request('searchname');
+        
+        if(!empty($name))
+        {
+        $data=form::where('name','like','%'.$name.'%')->where('empno','=',session('sid'))
+        ->orwhere('agencyname','like','%'.$name.'%')->where('empno','=',session('sid'))
+        ->orwhere('joblocation','like','%'.$name.'%')->where('empno','=',session('sid'))->latest()->Paginate(10);
+        }
+        else
+        {
+            $data=form::where('safetystatus','like','Approveds%')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('empno','=',session('sid'))->latest()->Paginate(10);
+
+        }
+     
+        return view('approvedreq',compact('data'));
+    }
+
+
+    public function getapprovedrequest()
+    {
+        $getdate1=request('date1');
+        $getdate2=request('date2');
+      
+        $data=form::where('safetystatus','like','Approved%')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('empno','=',session('sid'))->latest()->Paginate(10);
+        
+        return view('approvedreq',compact('data'));
+    }
+
+    public function searchreport()
+    {
+        $name=request('searchname');
+        
+        if(!empty($name))
+        {
+        $data=form::where('name','like','%'.$name.'%')->where('empno','=',session('sid'))
+        ->orwhere('empno','like','%'.$name.'%')->where('empno','=',session('sid'))
+        ->orwhere('agencyname','like','%'.$name.'%')->where('empno','=',session('sid'))
+        ->orwhere('joblocation','like','%'.$name.'%')->where('empno','=',session('sid'))->latest()->Paginate(10);
+        }
+        else
+        {
+            $data=form::select('*')->where('securitystatus','like','%')->where('maintanancestatus','like','%')->where('safetystatus','like','%')->latest()->Paginate(10);
+
+        }
+     
+        return view('status',compact('data'));
+    }
+
+    
+    public function getreports()
+    {
+        $getdate1=request('date1');
+        $getdate2=request('date2');
+      
+        $data=form::select('*')->where('securitystatus','like','%')->where('maintanancestatus','like','%')->where('safetystatus','like','%')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
+        
+        return view('status',compact('data'));
+    }
+
     public function updatepassword(Request $request)
     {
         $LoggedUserInfo=register::where('empno','=', session('sid'))->first();
@@ -74,15 +135,15 @@ class usercontroller extends Controller
     public function showreqqq()
     {
         
-        $data=form::where('empno','=',session('sid'))->Paginate(10);
+        $data=form::where('empno','=',session('sid'))->latest()->Paginate(10);
         return view('status',compact('data'));
     }
 
     public function showreqq()
     {
         
-        $data=form::where('safetystatus','like','approved%')->where('securitystatus','like','approved%')->where('maintanancestatus','like','approved%')->where('empno','=',session('sid'))->Paginate(10);
-
+        $data=form::where('safetystatus','like','Approved%')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('empno','=',session('sid'))->latest()->Paginate(10);
+    
         return view('approvedreq',compact('data'));
     }
 

@@ -17,11 +17,11 @@ class safety extends Controller
         $data=form::where('name','like','%'.$name.'%')
         ->orwhere('empno','like','%'.$name.'%')
         ->orwhere('agencyname','like','%'.$name.'%')
-        ->orwhere('joblocation','like','%'.$name.'%')->Paginate(10);
+        ->orwhere('joblocation','like','%'.$name.'%')->latest()->Paginate(10);
         }
         else
         {
-            $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->Paginate(10);
+            $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->latest()->Paginate(10);
 
         }
      
@@ -31,17 +31,19 @@ class safety extends Controller
     public function viewreport()
     {
 
-        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->Paginate(10);
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->latest()->Paginate(10);
     
         return view('safetyreport',compact('data'));
     }
+
+
     public function getreport()
     {
         $getdate1=request('date1');
         $getdate2=request('date2');
-          
-        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->whereBetween('date', [$getdate1, $getdate2])->Paginate(10);
-        
+
+        $data=form::select('*')->where('securitystatus','like','Approved%')->where('maintanancestatus','like','Approved%')->where('safetystatus','like','Approved%')->where('date','>=',$getdate1)->where('date','<=',$getdate2)->latest()->Paginate(10);
+                
         return view('safetyreport',compact('data'));
     }
 

@@ -26,12 +26,13 @@ class CreateSafetiesTable extends Migration
             $table->String('Adequateventilation');
             $table->String('AdequateLighting');
             $table->String('ElectricalSafety');
+            $table->String('ladder');
             $table->String('FallProtection');
             $table->String('Isolation');
             $table->String('isolation1')->nullable()->default(null);
             $table->String('trainingtalk');
             $table->String('precuation');
-            $table->String('remarks');   
+            $table->String('remarks')->nullable()->default(null);;   
             $table->timestamps();
         });
     }
